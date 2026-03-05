@@ -1,0 +1,117 @@
+:root {
+    --color-primary: #FF0033; /* Rouge vif du fond */
+    --color-secondary: #000000; /* Noir pour le texte */
+    --desktop-spacing: 60px;
+}
+
+/* ----------------- Reset & Base Styles ----------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Changé à min-height pour permettre le défilement */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    font-family: 'Oswald', sans-serif;
+    overflow-x: hidden;
+    /* Le défilement vertical sera activé si le contenu dépasse min-height */
+}
+
+.menu-overlay {
+    width: 100%;
+    /* Changé à min-height: 100vh pour que l'overlay soit au moins un écran plein */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 20px;
+    border: 10px solid var(--color-secondary);
+}
+
+/* ----------------- Header de l'Overlay ----------------- */
+.navbar-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.logo-overlay {
+    font-size: 18px; 
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--color-primary); 
+    -webkit-text-stroke: 1px var(--color-secondary); 
+    text-stroke: 1px var(--color-secondary); 
+}
+
+.nav-item {
+    color: var(--color-secondary);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--color-secondary);
+}
+
+/* ----------------- Liste des Catégories (Ajustements CLÉS pour le défilement) ----------------- */
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Remplacé space-evenly par une marge simple */
+    justify-content: flex-start; 
+    flex-grow: 1; 
+    text-align: center;
+    
+    /* Ajout de padding vertical pour un peu d'espace en haut/bas de la liste */
+    padding: 30px 0;
+    
+    /* IMPORTANT: Suppression de overflow: hidden; et de margin-bottom: -5px; */
+    margin-bottom: 0; 
+    overflow: visible; 
+}
+
+.category-item {
+    color: var(--color-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: clamp(28px, 6.5vw, 65px); 
+    font-weight: 700;
+    /* L'espacement est maintenant géré par margin-bottom/padding */
+    line-height: 1.05; 
+    padding: 5px 0;
+    margin-bottom: 10px; /* Ajout d'une petite marge entre les liens */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.category-item:hover {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+/* Media Query pour mobile: réduire les marges */
+@media (max-width: 768px) {
+    .menu-overlay {
+        border: 5px solid var(--color-secondary);
+    }
+    .categories-list {
+         padding: 15px 0;
+    }
+    .category-item {
+        font-size: clamp(20px, 9vw, 50px);
+        line-height: 1.0; 
+    }
+    .navbar-overlay {
+        padding: 0 5px;
+    }
+}

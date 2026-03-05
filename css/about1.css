@@ -1,0 +1,486 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+    color: #222222;
+}
+
+body {
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: calc(100% - 80px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-out;
+}
+a:hover {
+    color: #ff0000;
+}
+
+
+header {
+    background-color: transparent; 
+    padding: 30px 40px; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+}
+
+.header-left, .header-center {
+    display: flex;
+    gap: 20px;
+}
+
+.header-left > div, .header-center > div {
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+.header-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* NAVIGATION DESKTOP */
+nav {
+    display: block; 
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+nav ul li a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+}
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* --- MENU BURGER (ICÔNE SIMPLE ☰) --- */
+
+.menu-icon {
+    font-family: sans-serif;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #222222;
+    transition: transform 0.3s, color 0.3s;
+    display: none;
+    z-index: 2000; 
+    line-height: 1;
+}
+
+.menu-icon.open {
+    color: #ff0000;
+    transform: rotate(90deg); 
+}
+
+
+/* ==================================== */
+/* 1. SECTION SHOWCASE / TITRE PRINCIPAL */
+/* ==================================== */
+.showcase {
+    min-height: 80vh; 
+    display: flex;
+    align-items: center; 
+    padding: 80px 40px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase .main-title {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.showcase h1 {
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 0.85; 
+    letter-spacing: -2px; 
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.showcase h1 .line1 {
+    display: block;
+    font-size: 14vw; 
+    color: #222222;
+}
+.showcase h1 .line2 {
+    display: block;
+    font-size: 14vw;
+    color: #ff0000; 
+    margin-left: 10vw; 
+}
+
+
+/* Texte d'introduction sous le titre */
+.intro-text {
+    position: absolute;
+    bottom: 5%;
+    right: 40px; 
+    font-size: 1.1rem;
+    max-width: 300px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* Flèche défilante */
+.scroll-indicator {
+    position: absolute;
+    bottom: 5%;
+    left: 40px;
+    font-size: 3rem;
+    color: #222;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Animation de révélation au scroll */
+.animated-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animated-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+/* ==================================== */
+/* 2. SECTION À PROPOS (Texte simple et direct) */
+/* ==================================== */
+.about-section {
+    padding: 100px 40px;
+}
+
+.about-section h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 5rem;
+    color: #ff0000;
+    margin-bottom: 50px;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    max-width: 800px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+/* Carte de la Timeline simplifiée */
+.timeline-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    border-left: 5px solid #ff0000;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+.timeline-item h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.2rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+.timeline-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* ==================================== */
+/* 3. SECTION COMPÉTENCES (Grid Audacieuse) */
+/* ==================================== */
+.skills-section {
+    padding: 100px 40px;
+    background-color: #e8e8e8; 
+}
+
+.skills-section h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 5rem;
+    color: #222;
+    margin-bottom: 70px;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    text-align: right; 
+    max-width: 800px;
+    margin-left: auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category-card {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #ff0000;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.skill-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.skill-category-card h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+    color: #ff0000;
+    margin-bottom: 25px;
+}
+
+.skill-list ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list ul li {
+    background-color: #f7f7f7;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #555;
+    transition: background-color 0.2s, color 0.2s;
+}
+.skill-list ul li:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+
+/* ==================================== */
+/* 4. SECTION CENTRES D'INTÉRÊT */
+/* ==================================== */
+.interests-section {
+    padding: 100px 40px;
+}
+
+.interests-section h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 5rem;
+    color: #222;
+    margin-bottom: 70px;
+    line-height: 0.9;
+    letter-spacing: -1px;
+    max-width: 800px;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.interest-card-modern {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s;
+}
+.interest-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border-color: #ff0000;
+}
+
+.interest-card-modern h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.2rem;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+.interest-card-modern p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* ==================================== */
+/* 5. FOOTER (Pas de styles spécifiques pour le footer ici) */
+/* ==================================== */
+
+
+/* ==================================== */
+/* 6. RESPONSIVE DESIGN (Burger Menu Contact) */
+/* ==================================== */
+@media (max-width: 1200px) {
+    .showcase h1 .line2 { margin-left: 5vw; }
+}
+
+@media (max-width: 992px) {
+    /* 1. Afficher l'icône burger */
+    .menu-icon {
+        display: block; 
+    }
+
+    /* 2. Cacher la navigation par défaut et la positionner pour l'ouverture */
+    #main-nav {
+        display: none;
+        position: fixed; 
+        top: 0; 
+        right: 0; 
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff; 
+        box-shadow: none;
+        padding: 0;
+        z-index: 1500;
+        transform: translateX(100%); 
+        transition: transform 0.4s ease-out;
+    }
+
+    /* 3. État ouvert (Menu Plein Écran) */
+    #main-nav.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(0); 
+    }
+    
+    /* 4. Réorganisation des liens (Style Contact: Bordures et Grand Texte) */
+    #main-nav ul {
+        flex-direction: column;
+        gap: 0; 
+        width: 100%;
+        max-width: 500px; 
+        border-top: 1px solid #eee; 
+        border-bottom: 1px solid #eee; 
+    }
+
+    #main-nav ul li a {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #000;
+        padding: 20px 0; 
+        text-align: center;
+        border-bottom: 1px solid #eee; 
+    }
+    /* Enlever la dernière bordure pour éviter la double ligne */
+    #main-nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    #main-nav ul li a:hover {
+        background-color: #f7f7f7;
+        color: #ff0000;
+    }
+
+    /* Gérer le header sur mobile */
+    header {
+        justify-content: space-between; 
+        padding: 20px 40px;
+        align-items: center;
+    }
+    .header-center { display: none; }
+    
+    .header-left {
+        display: block; 
+        order: -1;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .header-right {
+        gap: 0;
+        justify-content: flex-end;
+    }
+
+    /* Reste du responsive */
+    .container { width: calc(100% - 40px); }
+    .showcase h1 .line1, .showcase h1 .line2 { font-size: 10vw; }
+    .showcase h1 .line2 { margin-left: 0; text-align: center; } 
+    .intro-text { position: static; text-align: center; max-width: 100%; margin-top: 50px; }
+    .scroll-indicator { position: static; margin-top: 30px; }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .about-section h2, .skills-section h2, .interests-section h2 {
+        font-size: 4rem;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .skills-grid, .interests-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container { width: calc(100% - 40px); } 
+    header { padding: 20px 20px; }
+    .showcase, .about-section, .skills-section, .interests-section, footer { padding: 50px 20px; }
+
+    .showcase h1 .line1, .showcase h1 .line2 { font-size: 8vw; letter-spacing: -1px; }
+
+    .about-section h2, .skills-section h2, .interests-section h2 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+    .skill-category-card h3, .interest-card-modern h3, .timeline-item h3 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .header-left { display: block; } 
+    .header-center { display: none; }
+    
+    .showcase h1 .line1, .showcase h1 .line2 { font-size: 10vw; letter-spacing: -0.5px; } 
+    .about-section h2, .skills-section h2, .interests-section h2 { font-size: 2.5rem; }
+}

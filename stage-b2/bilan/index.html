@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Internship Report — B2 Internship</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/index1.css" />
+  <script src="/js/index.js" defer></script>
+
+
+  <style>
+
+    html, body { background:#ffffff !important; color:#111111 !important; }
+    a { color:#0f172a; }
+
+    :root{
+      --stage-bg:#ffffff;
+      --stage-bd:#e5e7eb;
+      --stage-txt:#111827;
+      --stage-muted:#374151;
+      --stage-chip-bg:#f8fafc;
+      --stage-accent:#0ea5e9;
+    }
+
+    .stage-wrap{max-width:1040px;margin:2.2rem auto;padding:0 16px;color:var(--stage-txt)}
+    .stage-hero{
+      display:grid;gap:12px;padding:20px;border:1px solid var(--stage-bd);
+      background:var(--stage-bg);border-radius:16px;margin-bottom:24px
+    }
+    .stage-eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.9rem;color:var(--stage-muted)}
+    .stage-title{
+      font-family:'Bebas Neue',sans-serif;letter-spacing:.5px;
+      font-size:56px;line-height:1;margin:.2rem 0 .4rem;color:var(--stage-txt)
+    }
+    .stage-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.95rem;color:var(--stage-muted)}
+    .stage-chip{
+      display:inline-flex;align-items:center;gap:8px;border:1px solid var(--stage-bd);
+      background:var(--stage-chip-bg);padding:.35rem .6rem;border-radius:999px;font-size:.9rem;color:var(--stage-muted)
+    }
+
+    .stage-grid{display:grid;gap:16px}
+    @media(min-width:900px){.stage-grid{grid-template-columns:1.2fr .8fr}}
+
+    .stage-card{
+      border:1px solid var(--stage-bd);background:var(--stage-bg);border-radius:14px;padding:18px;color:var(--stage-txt)
+    }
+    .stage-card h2{
+      font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.4px;margin:2px 0 10px;color:var(--stage-txt)
+    }
+    .stage-card h3{
+      font-weight:700;margin:.6rem 0 .25rem;color:var(--stage-txt)
+    }
+    .stage-note{
+      background:linear-gradient(180deg,#fff7ed,#fff1d6);
+      border:1px solid var(--stage-bd);border-radius:10px;padding:10px 12px;font-size:.95rem;margin:10px 0;color:#7c2d12
+    }
+    .stage-list{padding-left:1.1rem}
+    .stage-list li{margin:.25rem 0}
+
+
+    .stage-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .stage-figure{border:1px solid var(--stage-bd);background:var(--stage-bg);border-radius:12px;overflow:hidden}
+    .stage-figure img{display:block;width:100%;height:auto}
+    .stage-figcap{padding:10px 12px;color:var(--stage-muted);font-size:.95rem}
+
+    .stage-breadcrumb{font-size:.95rem;color:var(--stage-muted);margin:0 0 12px}
+    .stage-breadcrumb a{text-decoration:none;color:inherit}
+    .stage-disclaimer{margin-top:18px;color:var(--stage-muted);font-size:.9rem}
+    .stage-sep{height:1px;background:var(--stage-bd);margin:14px 0}
+
+    .stage-top-controls {
+      display: flex;
+      justify-content: space-between; 
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .stage-back-btn {
+      text-decoration: none;
+      color: var(--stage-muted);
+      font-size: .95rem;
+      padding: 4px 8px;
+      border: 1px solid var(--stage-bd);
+      border-radius: 6px;
+      background-color: var(--stage-chip-bg);
+      transition: background-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stage-back-btn:hover {
+      background-color: var(--stage-bd);
+    }
+    
+    .stage-back-btn span {
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <a href="../../index.html">PN</a>
+    </div>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="/page/about.html">About</a></li>
+            <li><a href="/page/portfolio.html">Portfolio</a></li>
+            <li><a href="/page/contact.html">Contact</a></li>
+            <li><a href="../../stage-b2/index.html">Internship B2 (2025)</a></li>
+        </ul>
+    </nav>
+    <div class="menu-controls">
+      <div class="toggle-theme"></div>
+      <div class="menu-icon">☰</div>
+  </div>
+</header>
+
+<main class="stage-wrap">
+    
+  <div class="stage-top-controls">
+      <a href="javascript:history.back()" class="stage-back-btn">
+          <span>&#x2190;</span> Back
+      </a>
+  </div>
+
+  <p class="stage-breadcrumb"><a href="../index.html">B2 Internship (2025)</a> · Report</p>
+
+
+    <section class="stage-hero">
+      <span class="stage-eyebrow">Internship Report</span>
+      <h1 class="stage-title">VIApass — Palais des Festivals (Cannes)</h1>
+      <div class="stage-meta">
+        <span class="stage-chip">Network Operations</span>
+        <span class="stage-chip">High-Density Wi-Fi &amp; Segmentation</span>
+        <span class="stage-chip">Maps, Playbooks, Dashboards</span>
+      </div>
+    </section>
+
+
+    <section class="stage-grid">
+      <article class="stage-card">
+        <h2>Summary</h2>
+        <p>
+          This internship immersed me in **event network operations** at the **Palais des Festivals**.
+          The objective: ensure stable connectivity for diverse audiences (exhibitors, staff, press, visitors) during 
+          <em>peak traffic periods</em>. I worked on **readability of floor plans**, the **actionability
+          of dashboards**, and the **fluidity of incident management**.
+        </p>
+
+        <div class="stage-note">
+          <strong>Key Challenges:</strong> quick visibility into sensitive areas, reduction of alerting noise,
+          field coordination ↔ supervision.
+        </div>
+
+        <h2>Key Contributions</h2>
+        <ul class="stage-list">
+          <li>Creation of **mapping templates**: unified legends, homogeneous naming, "public" version.</li>
+          <li>Proposal of an **"event view"**: synthesis + drill-down by priority zone.</li>
+          <li>**Intervention Playbooks**: 1) rapid diagnosis 2) escalation 3) synthetic post-mortem.</li>
+          <li>Improvement of **ticket quality** via a minimal form (who/what/where/when).</li>
+        </ul>
+
+        <h2>Skills Developed</h2>
+        <h3>Technical</h3>
+        <ul class="stage-list">
+          <li>Segmentation (VLAN), high-density Wi-Fi, QoS and traffic prioritization.</li>
+          <li>Reading truly useful monitoring indicators (RSSI, SNR, median throughput, availability).</li>
+          <li>Interoperability with audiovisual equipment (IP addressing, gateway/DNS checks, configuration control).</li>
+        </ul>
+        <h3>Methodology</h3>
+        <ul class="stage-list">
+          <li>Versioned documentation, distribution of non-sensitive <em>public views</em>.</li>
+          <li>Incident management: from ticket creation to post-mortem, capitalizing on lessons learned.</li>
+          <li>Construction of pre-opening checklists and ultra-short debriefs.</li>
+        </ul>
+        <h3>Transversal</h3>
+        <ul class="stage-list">
+          <li>Field communication ↔ NOC, simplification for non-technical users, coordination of stakeholders.</li>
+          <li>Organization under pressure and prioritization.</li>
+        </ul>
+      </article>
+
+      <aside class="stage-card">
+        <h2>Tools &amp; Stack (Generic)</h2>
+        <ul class="stage-list">
+          <li>Monitoring &amp; dashboards (network indicators, alerting, summary views).</li>
+          <li>Ticketing (diagnosis workflow → escalation → resolution → post-mortem).</li>
+          <li>Hardware: distribution cases, switches (e.g., MikroTik), high-density APs, RJ45/fiber patching.</li>
+          <li>Field verification tools (VLAN detection, DHCP, throughput test), schematics.</li>
+        </ul>
+
+        <div class="stage-sep"></div>
+
+        <h2>Concrete Case (Anonymized)</h2>
+        <p><strong>Context:</strong> press zone saturated mid-event.</p>
+        <ol class="stage-list">
+          <li>Symptom validation (low throughput, high latency) &rarr; rapid multi-point tests.</li>
+          <li>Map &amp; monitoring check &rarr; identification of an undersized priority zone.</li>
+          <li>Action: distribution reinforcement + rebalancing, QoS control.</li>
+          <li>Result: restored user comfort and stability until closing.</li>
+        </ol>
+
+        <div class="stage-sep"></div>
+
+        <h2>Best Practices</h2>
+        <ul class="stage-list">
+          <li>Uniform maps and consistent naming &rarr; less ambiguity.</li>
+          <li>Alerts sorted by <em>criticality</em> + contextualized thresholds &rarr; focus on actionable items.</li>
+          <li>Complete tickets (who/what/where/when) &rarr; accelerated diagnosis.</li>
+          <li>Pre-opening checklists + short debriefs &rarr; continuous improvement.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="stage-card" style="margin-top:16px">
+      <h2>Before / During</h2>
+      <div class="stage-gallery">
+        <figure class="stage-figure">
+          <img src="../images/salle-montage.jpg" alt="Area before opening to the public (setup phase)">
+          <figcaption class="stage-figcap">Before opening: preparation, cabling, and critical checks.</figcaption>
+        </figure>
+        <figure class="stage-figure">
+          <img src="../images/mikrotik-flightcase.jpg" alt="MikroTik case for temporary event distribution">
+          <figcaption class="stage-figcap">During the event: operational distribution, maintaining SLOs.</figcaption>
+        </figure>
+      </div>
+      <p class="stage-disclaimer">Some technical information may be anonymized (public IPs, SSIDs, identifiers).</p>
+    </section>
+
+    <section class="stage-card" style="margin-top:16px">
+      <h2>Acknowledgements</h2>
+      <p>
+        Thank you to the **VIApass** team for the welcome and guidance, and to the teams at the
+        **Palais des Festivals** for the field collaboration. This immersion gave me a concrete vision
+        of network demands in an event environment and reinforced my desire to continue in this path.
+      </p>
+    </section>
+
+  </main>
+
+
+  <script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('open');
+    });
+</script>
+</body>
+</html>

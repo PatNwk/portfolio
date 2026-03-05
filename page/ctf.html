@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N3akz CODE - Write-ups & CTF Challenges</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-grid"></div> <!-- Element de grille de fond -->
+    
+    <header class="navbar">
+        <nav class="nav-left">
+            <a href="#" class="nav-item menu">MENU</a>
+        </nav>
+        <div class="logo">N3akz CODE</div> 
+        <nav class="nav-right">
+            <a href="#" class="nav-item say-hello">JOIN OUR TEAM</a>
+            <div class="tag-group-right">
+                <span class="tag tag-right-1">FLAG FORMAT: [TEAMNAME-CTF]</span>
+                <span class="tag tag-right-2">CATEGORY: PWNING / REVERSE</span>
+            </div>
+        </nav>
+        <div class="header-line"></div> <!-- Ligne décorative horizontale -->
+    </header>
+
+    <main class="hero-section">
+        <span class="tag tag-top-left">#WRITEUP | #CVE-2025</span>
+
+        <!-- Marqueurs de coin -->
+        <div class="corner-marker top-left-corner">[</div>
+        <div class="corner-marker top-right-corner">]</div>
+        <div class="corner-marker bottom-left-corner">[</div>
+        <div class="corner-marker bottom-right-corner">]</div>
+        
+        <!-- Ligne de balayage animée (Desktop seulement) -->
+        <div class="scan-line"></div> 
+        
+        <h1 class="headline">
+            <span class="line-1 outlined">HUNT THE</span>
+            
+            <div class="line-2-3">
+                <span class="line-2 outlined">FLAG</span>
+                <span class="line-3 filled">CRACK THE</span>
+            </div>
+            
+            <span class="line-4 outlined">NOISE</span>
+        </h1>
+        
+        <!-- Texte décoratif dans les coins (Hash Corner) -->
+        <div class="hash-corner hash-top-left">PRIVATE ACCESS</div> <!-- Texte en rotation -->
+        
+        <!-- Les petits textes en bas sont maintenant intégrés dans le footer pour le desktop -->
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="description">
+                    PUBLISHING DETAILED WRITE-UPS <br>
+                    CONTEXT-RICH CHALLENGE SOLUTIONS
+                </p>
+                <div class="small-meta-data">
+                    <span class="meta-item">IP: 192.168.1.1</span>
+                    <span class="meta-item status-ok">STATUS: OK</span>
+                </div>
+            </div>
+            
+            <a href="cat.html" class="btn">VIEW WRITE-UPS</a>
+        </div>
+    </main>
+    <div class="footer-bottom-line"></div> <!-- Ligne décorative horizontale en bas -->
+
+    <style>
+      :root {
+    --color-primary: #FF0033; 
+    --color-background: #000000; 
+    --color-text-subtle: rgba(255, 255, 255, 0.5); 
+    --desktop-spacing: 60px;
+    --mobile-spacing: 20px;
+    --line-thickness: 1px;
+}
+
+/* ----------------- Reset & Base Styles ----------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: 'Oswald', sans-serif; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* ----------------- Background Grid Pattern ----------------- */
+.background-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place derrière tout le contenu */
+    background-image: repeating-linear-gradient(0deg, var(--color-primary) 0, transparent 1px, transparent 100%), 
+                      repeating-linear-gradient(90deg, var(--color-primary) 0, transparent 1px, transparent 100%);
+    background-size: 50px 50px;
+    opacity: 0.05; /* Très discret */
+    pointer-events: none;
+}
+
+
+/* ----------------- Effets de Texte ----------------- */
+.filled {
+    color: var(--color-primary);
+    -webkit-text-stroke: none;
+    text-stroke: none;
+    text-shadow: none;
+}
+
+.outlined {
+    color: var(--color-background);
+    -webkit-text-stroke: 1.5px var(--color-primary);
+    text-stroke: 1.5px var(--color-primary); 
+    /* Fallback (léger text-shadow) */
+    text-shadow: 
+        -1px -1px 0 var(--color-primary),  
+        1px -1px 0 var(--color-primary),
+        -1px 1px 0 var(--color-primary),
+        1px 1px 0 var(--color-primary);
+}
+
+/* ----------------- Lignes Décoratives Horizontales (Mobile - Invisibles) */
+.header-line, .footer-bottom-line {
+    display: none;
+}
+
+/* ----------------- Marqueurs de coin (Mobile - Invisibles) */
+.corner-marker {
+    display: none;
+}
+
+/* ----------------- Ligne de balayage (Mobile - Invisible) */
+.scan-line {
+    display: none;
+}
+
+
+/* ========================================================= */
+/* ============= MOBILE FIRST (Par défaut) ================= */
+/* ========================================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--mobile-spacing);
+    font-size: 10px;
+    letter-spacing: 2px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 20px; 
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+}
+
+.nav-left { 
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.tag-group-right {
+    display: none; 
+}
+
+.nav-item { margin: 0; opacity: 0.8; } 
+
+/* Tags Top-Left & Decorative Hashes */
+.tag-top-left, .hash-corner {
+    display: none; 
+}
+
+/* Section Principale */
+.hero-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--mobile-spacing) var(--mobile-spacing) var(--mobile-spacing);
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Titre Principal (Mobile) */
+.headline {
+    font-size: clamp(60px, 15vw, 85px); 
+    line-height: 0.95; 
+    font-weight: 700;
+    margin-top: 15vh; 
+    margin-bottom: auto;
+    user-select: none;
+    text-transform: uppercase;
+    text-align: center; 
+
+    display: flex;
+    flex-direction: column;
+}
+
+.line-1, .line-2-3, .line-4 {
+    width: 100%;
+    padding: 0; 
+    margin: 0;
+}
+
+.line-2-3 {
+    display: block; 
+}
+.line-3 {
+    margin-left: 0;
+    display: block;
+}
+
+/* Footer (Mobile) */
+.footer-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 5vh; 
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.small-meta-data {
+    display: none; /* Cache les petites données techniques sur mobile */
+}
+
+.description {
+    color: var(--color-text-subtle);
+    font-family: sans-serif;
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    max-width: 280px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    border: 1px solid var(--color-primary);
+    padding: 12px 22px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+
+/* ========================================================= */
+/* ============= MEDIA QUERIES (Desktop Overrides) ========= */
+/* ========================================================= */
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+@media (min-width: 769px) {
+    
+    /* Revert to Desktop Spacing */
+    :root {
+        --base-spacing: var(--desktop-spacing);
+    }
+    
+    /* ----------------- Marqueurs de coin (Desktop) ----------------- */
+    .corner-marker {
+        display: block;
+        position: fixed;
+        color: var(--color-primary);
+        font-size: 10px;
+        font-family: monospace;
+        z-index: 10;
+        opacity: 0.8;
+    }
+    .top-left-corner { top: 10px; left: 10px; }
+    .top-right-corner { top: 10px; right: 10px; }
+    .bottom-left-corner { bottom: 10px; left: 10px; }
+    .bottom-right-corner { bottom: 10px; right: 10px; }
+
+    /* ----------------- Lignes Décoratives Horizontales (Desktop) */
+    .header-line, .footer-bottom-line {
+        display: block;
+        position: absolute;
+        height: var(--line-thickness);
+        width: 100%;
+        background-color: var(--color-primary);
+        opacity: 0.3;
+    }
+    .header-line { top: 0; }
+    .footer-bottom-line { bottom: 0; }
+    
+    /* ----------------- Ligne de balayage (Desktop) */
+    .scan-line {
+        display: block;
+        position: fixed;
+        left: 50%;
+        width: 1px;
+        height: 100vh;
+        background: linear-gradient(to bottom, 
+                    rgba(255, 0, 51, 0) 0%, 
+                    rgba(255, 0, 51, 0.5) 50%, 
+                    rgba(255, 0, 51, 0) 100%);
+        transform: translateY(-100%);
+        animation: scan 10s linear infinite;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+
+    /* Header adjustments */
+    .navbar {
+        padding: 20px var(--desktop-spacing);
+    }
+    
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px; 
+        top: 20px;
+    }
+
+    .nav-left {
+        padding-top: 10px; 
+        display: block;
+    }
+    
+    .nav-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding-top: 10px; 
+    }
+
+    .nav-item { 
+        margin-bottom: 25px; 
+        opacity: 0.8; 
+    }
+    
+    .tag-group-right {
+        display: block; 
+        margin-top: 0; 
+    }
+    
+    /* Tags Top-Left & Decorative Hashes */
+    .tag-top-left, .hash-corner {
+        display: block; 
+        position: absolute;
+        font-family: monospace;
+        font-size: 9px;
+        letter-spacing: 1px;
+        color: var(--color-text-subtle); /* Couleur des petits textes en gris */
+    }
+
+    .tag-top-left {
+        top: 80px; 
+        left: var(--desktop-spacing);
+        z-index: 10;
+        color: var(--color-primary); /* Reste rouge pour le tag principal */
+    }
+
+    /* Texte en rotation à gauche ("PRIVATE ACCESS") */
+    .hash-corner {
+        top: 50%; 
+        left: calc(var(--desktop-spacing) / 2);
+        transform: translateY(-50%) rotate(90deg);
+        transform-origin: center center;
+        white-space: nowrap; /* Garde le texte sur une seule ligne */
+    }
+    
+    /* Section Principale */
+    .hero-section {
+        padding: 0 var(--desktop-spacing) var(--desktop-spacing) var(--desktop-spacing);
+        align-items: stretch; 
+        justify-content: center;
+    }
+
+    /* Titre Principal (Desktop Layout) */
+    .headline {
+        font-size: clamp(80px, 12vw, 160px); 
+        line-height: 0.85; 
+        margin-top: 150px; 
+        margin-bottom: auto;
+        text-align: left;
+        
+        display: grid; 
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .line-1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .line-2-3 {
+        grid-area: 2 / 1 / 3 / 3; 
+        display: flex; 
+        justify-content: space-between;
+        align-items: center; 
+    }
+    
+    .line-2 { 
+        flex-grow: 0;
+        margin-right: 20px; 
+    }
+
+    .line-3 { 
+        flex-shrink: 0;
+        margin-left: auto; 
+    }
+
+    .line-4 { 
+        grid-area: 3 / 1 / 4 / 2; 
+        padding-left: 0; 
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: flex-end;
+        text-align: left;
+        padding-top: 50px;
+    }
+    
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .description {
+        margin-bottom: 5px; 
+    }
+
+    /* Petites données techniques en bas */
+    .small-meta-data {
+        display: flex;
+        font-family: monospace;
+        font-size: 9px;
+        color: var(--color-text-subtle);
+        
+        /* Positionnement précis pour ne pas chevaucher le bouton */
+        position: absolute;
+        bottom: 20px; 
+        left: var(--desktop-spacing);
+        width: calc(100% - 2 * var(--desktop-spacing) - 200px); /* Laisse de la place pour le bouton */
+        justify-content: space-between;
+        
+        /* Ajout de nouvelles métadonnées pour densifier le bas */
+        gap: 20px;
+        max-width: 500px;
+    }
+
+    .small-meta-data::after {
+        content: "GEO: 43.5187° N, 7.0003° E | TEAM_REF: YNOV_CYBER_CREW-1337";
+        color: var(--color-text-subtle);
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+
+
+    .meta-item:first-child {
+        margin-right: 20px; /* Ajout d'espace */
+    }
+
+    .status-ok {
+        /* Décalé à droite des autres items meta, mais pas jusqu'au bord */
+        margin-left: 20px;
+    }
+
+    .btn {
+        /* Le bouton est aligné à droite, au-dessus du STATUS: OK */
+        position: absolute;
+        bottom: 50px;
+        right: var(--desktop-spacing);
+    }
+}
+    </style>
+</body>
+</html>

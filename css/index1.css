@@ -1,0 +1,427 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.signature svg {
+    width: 70%;
+    height: auto;
+    transform-origin: center;
+    animation: draw-signature 3s ease-in-out forwards;
+}
+
+@keyframes draw-signature {
+    0% {
+        stroke-dasharray: 0, 200;
+    }
+    100% {
+        stroke-dasharray: 200, 0;
+    }
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icon img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    color: black;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+    filter: invert(100%) brightness(100%) grayscale(0%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-left: 10%;
+}
+
+.hero-image img {
+    width: 350px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+.hero-description {
+    max-width: 300px;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 10%;
+}
+
+.quote {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    max-width: 800px;
+    line-height: 1.4;
+    position: relative;
+    margin-bottom: 10%;
+    margin-top: 70%;
+    margin-left: 10%;
+}
+
+.quote::before,
+.quote::after {
+    font-size: 10rem;
+    color: red;
+    position: absolute;
+    opacity: 0.2;
+}
+
+.quote::before {
+    content: '“';
+    top: -50px;
+    left: -50px;
+}
+
+.quote::after {
+    content: '”';
+    bottom: -50px;
+    right: -50px;
+}
+
+.author {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.parallax-section {
+    position: relative;
+    text-align: center;
+    padding: 40px 0;
+    overflow: visible;
+}
+
+.parallax-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.parallax-text {
+    font-size: 12rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.parallax-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
+    margin-bottom: 150px;
+}
+
+.parallax-image {
+    width: 350px;
+    height: auto;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease-out;
+    position: absolute;
+}
+
+.france {
+    top: 10px;
+    left: 5%;
+}
+
+.pologne {
+    top: 160px;
+    left: 40%;
+}
+
+.Shoot {
+    top: 30px;
+    right: 1%;
+}
+
+.quote h2, .quote .author {
+    color: rgb(150, 150, 150);
+    transition: color 0.5s ease-in-out;
+}
+
+.about-me {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #ff0000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 60px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+.about-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-family: "Neue Haas Grotesk", sans-serif;
+    justify-content: center;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #ffffff;
+    color: rgb(255, 0, 0);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .social-cv {
+        padding: 20px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .social-media-links {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 80%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+        margin-left: 0;
+    }
+
+    .hero-image img {
+        width: 250px;
+        margin: 20px 0;
+    }
+
+    .hero-description {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .parallax-text {
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .quote {
+        font-size: 2rem;
+        max-width: 90%;
+        margin: 40px auto;
+    }
+
+    .parallax-text {
+        font-size: 6rem;
+        top: 15%;
+    }
+
+    .parallax-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .parallax-image {
+        position: relative;
+        width: 80%;
+    }
+
+    .france, .pologne, .Shoot {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .social-cv {
+        padding: 20px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .social-media-links {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .quote {
+        font-size: 1.8rem;
+    }
+
+    .parallax-text {
+        font-size: 4rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-media-links {
+        flex-wrap: wrap;
+    }
+}
+
+.social-cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.hero-code pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.hero-code code {
+    font-family: "Neue Haas Grotesk", sans-serif;
+    font-size: 2rem;
+    color: #000000;
+    display: block;
+    white-space: pre-wrap;
+}

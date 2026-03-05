@@ -1,0 +1,21 @@
+
+/* Simple styles for the CTF page */
+:root{ --bg:#0e0e12; --fg:#eaeaf0; --muted:#9aa0a6; --card:#15151c; --accent:#5eead4; }
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--fg); }
+.header-tag{ font-family: "Bebas Neue", system-ui, sans-serif; letter-spacing:1px; }
+main{ padding:32px 16px 80px; max-width:1100px; margin:0 auto; }
+.hero-ctf{ display:flex; flex-direction:column; gap:8px; margin-bottom:24px; }
+.hero-ctf h1{ font-family:"Bebas Neue", system-ui, sans-serif; font-size:56px; line-height:.95; margin:0; }
+.hero-ctf p{ color:var(--muted); margin:0; }
+.badge{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid #272733; background:#12121a; border-radius:999px; font-size:14px; margin-top:8px;}
+.badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); }
+.ctf-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:24px;}
+.card{ background:var(--card); border:1px solid #1f1f2a; border-radius:16px; padding:16px; display:flex; flex-direction:column; gap:8px; }
+.card h3{ margin:0 0 4px; font-size:18px;}
+.card p{ margin:0; color:var(--muted); font-size:14px; }
+.card a{ margin-top:auto; text-decoration:none; color:var(--fg); border:1px solid #2a2a38; padding:8px 12px; border-radius:10px; display:inline-block;}
+.card a:hover{ border-color:var(--accent); }
+.section-title{ margin:24px 0 8px; font-size:22px; }
+hr{ border:none; border-top:1px solid #232333; margin:24px 0; }
+footer{ padding:24px; text-align:center; color:var(--muted); }

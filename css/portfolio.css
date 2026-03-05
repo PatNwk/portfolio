@@ -1,0 +1,258 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 50px auto;
+    position: relative;
+    z-index: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.title {
+    display: flex;
+    align-items: baseline;
+}
+
+.career {
+    font-size: 12rem;
+    font-weight: bold;
+    color: red;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 1;
+    opacity: 0;
+    animation: fadeInCareer 1s forwards;
+}
+
+.journey {
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    -webkit-text-stroke: 2px black;
+    color: transparent;
+    margin-left: 20px;
+    opacity: 0;
+    animation: fadeInJourney 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInCareer {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInJourney {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.description {
+    max-width: 500px;
+    text-align: left;
+    font-size: 18px;
+    color: black;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.visual {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+.full-width-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    flex-wrap: wrap; 
+}
+
+.full-width-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image {
+    width: 40%;
+    height: auto;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-out;
+    border-radius: 30px;
+}
+
+.text-content {
+    width: 50%;
+    padding-left: 5%;
+}
+
+.text-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+@media (max-width: 1024px) {
+    .career {
+        font-size: 8rem;
+        max-width: 100%;
+    }
+
+    .journey {
+        font-size: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .project-image {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        width: 80%;
+        padding-left: 0;
+    }
+
+    .text-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .career {
+        font-size: 6rem;
+        max-width: 100%;
+    }
+
+    .journey {
+        font-size: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .full-width-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .project-image {
+        width: 80%;
+    }
+
+    .text-content {
+        width: 90%;
+    }
+
+    .text-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .career {
+        font-size: 4rem;
+        max-width: 100%;
+    }
+
+    .journey {
+        font-size: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .full-width-container {
+        padding: 20px;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .text-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+    }
+}

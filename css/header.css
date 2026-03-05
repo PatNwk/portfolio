@@ -1,0 +1,128 @@
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: relative; 
+}
+
+/* Logo Styling */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none; 
+    color: black; 
+}
+
+.logo a:visited {
+    color: black;
+}
+
+.logo a:hover {
+    color: gray;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: gray;
+}
+
+/* Conteneur pour le bouton de thème et l'icône de menu */
+.menu-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+/* Bouton de changement de thème */
+.toggle-theme {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Style de l'icône Hamburger */
+.menu-icon {
+    display: none; 
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/* ADAPTATION RESPONSIVE (HAMBURGER)           */
+/* ------------------------------------------- */
+
+/* Adaptation pour tablettes et écrans larges */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px;
+    }
+    nav ul {
+        gap: 10px; 
+    }
+}
+
+/* Adaptation pour téléphones : Activation du menu Hamburger */
+@media (max-width: 600px) {
+    
+    header {
+        justify-content: space-between; 
+        padding: 15px 20px;
+    }
+
+    nav {
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: white; 
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        text-align: center;
+        padding: 10px 0;
+        gap: 0;
+    }
+
+    nav ul li {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee; 
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+    }
+}
