@@ -11,13 +11,20 @@
 <body>
     <div class="menu-overlay">
         <header class="navbar-overlay">
-            <div class="nav-item close-btn">[ CLOSE ]</div>
+            <button
+                class="nav-item close-btn"
+                type="button"
+                onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='/page/ctf.html'; }"
+                aria-label="Retour"
+            >
+                [ BACK ]
+            </button>
             <div class="logo-overlay">N3akz CODE</div> 
-            <div class="nav-item say-hello">[ JOIN TEAM ]</div>
+            <a href="/page/ctf.html" class="nav-item say-hello">[ LANDING ]</a>
         </header>
 
         <nav class="categories-list">
-            <a href="#" class="category-item">HOME</a>
+            <a href="/page/ctf.html" class="category-item">HOME</a>
             <a href="/page/crypto.html" class="category-item">CRYPTOGRAPHY</a>
             <a href="#" class="category-item">WEB HACKING</a>
             <a href="/page/reverse.html" class="category-item">REVERSE ENGINEERING</a>

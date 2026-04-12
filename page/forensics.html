@@ -166,28 +166,49 @@
         </div>
       </div>
 
-      <!-- ROW 2 -->
-<div class="row row--with-aside">
-  <div>
-    <div class="meta">
-      <span class="chip chip--fill">GLACIERCTF_25</span>
-      <span class="chip">GL_FT-2:1</span>
-    </div>
+      <!-- ROW 3 -->
+      <div class="row row--with-aside">
+        <div>
+          <div class="meta">
+            <span class="chip chip--fill">GLACIERCTF_25</span>
+            <span class="chip">GL_FT-2:1</span>
+          </div>
 
-    <div class="stack">
-      <h2 class="big big--xl" style="color:#fff">findme v2</h2>
-      <h3 class="big big--lg outlined">PDF streams → zlib → hidden PNG.</h3>
-    </div>
-  </div>
+          <div class="stack">
+            <h2 class="big big--xl" style="color:#fff">findme v2</h2>
+            <h3 class="big big--lg outlined">PDF streams → zlib → hidden PNG.</h3>
+          </div>
+        </div>
 
-  <!-- aside + small right-aligned link -->
-  <div class="aside-wrap">
-    <p class="aside">
-      The PDF is a decoy: the real payload is embedded in a compressed stream. Extract the streams, brute-force zlib offsets, then recover a hidden PNG and read the flag.
-    </p>
-    <a class="read-link" href="/writeups/glacier2025_find_me.md">READ THE WRITE-UP →</a>
-  </div>
-</div>
+        <div class="aside-wrap">
+          <p class="aside">
+            The PDF is a decoy: the real payload is embedded in a compressed stream. Extract the streams, brute-force zlib offsets, then recover a hidden PNG and read the flag.
+          </p>
+          <a class="read-link" href="/writeups/glacier2025_find_me.md">READ THE WRITE-UP →</a>
+        </div>
+      </div>
+
+      <!-- ROW 4 -->
+      <div class="row row--with-aside">
+        <div>
+          <div class="meta">
+            <span class="chip chip--fill">VISUAL_LEAK_26</span>
+            <span class="chip">FRC_FT-2:3</span>
+          </div>
+
+          <div class="stack">
+            <h2 class="big big--xl" style="color:#fff">Visual Leak</h2>
+            <h3 class="big big--lg outlined">RDP cache forensics → OpenSSL payload recovery.</h3>
+          </div>
+        </div>
+
+        <div class="aside-wrap">
+          <p class="aside">
+            Rebuild bitmap tiles from the RDP cache to recover the attacker IP, isolate the real PCAP traffic, then decrypt the exfiltrated OpenSSL payload with the recovered key material.
+          </p>
+          <a class="read-link" href="/writeups/visual_leak_writeup.md">READ THE WRITE-UP →</a>
+        </div>
+      </div>
     </section>
   </main>
 </body>

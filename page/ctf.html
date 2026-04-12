@@ -9,6 +9,16 @@
 </head>
 <body>
     <div class="background-grid"></div> <!-- Element de grille de fond -->
+    <div class="nav-utility">
+        <button
+            class="back-btn"
+            type="button"
+            onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='/page/portfolio.html'; }"
+            aria-label="Retour"
+        >
+            ← Back
+        </button>
+    </div>
     
     <header class="navbar">
         <nav class="nav-left">
@@ -97,6 +107,33 @@ body {
     overflow-x: hidden; /* Empêche le débordement horizontal */
 }
 
+.nav-utility {
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    z-index: 20;
+}
+
+.back-btn {
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    transform: translateY(-1px);
+}
+
 a {
     color: var(--color-primary);
     text-decoration: none;
@@ -163,7 +200,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px var(--mobile-spacing);
+    padding: 72px var(--mobile-spacing) 20px;
     font-size: 10px;
     letter-spacing: 2px;
     width: 100%;
@@ -348,7 +385,7 @@ a {
 
     /* Header adjustments */
     .navbar {
-        padding: 20px var(--desktop-spacing);
+        padding: 20px var(--desktop-spacing) 20px calc(var(--desktop-spacing) + 96px);
     }
     
     .logo {
@@ -357,6 +394,11 @@ a {
         transform: translateX(-50%);
         font-size: 18px; 
         top: 20px;
+    }
+
+    .nav-utility {
+        top: 20px;
+        left: var(--desktop-spacing);
     }
 
     .nav-left {
@@ -514,6 +556,18 @@ a {
         position: absolute;
         bottom: 50px;
         right: var(--desktop-spacing);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-utility {
+        top: 14px;
+        left: 14px;
+    }
+
+    .back-btn {
+        padding: 7px 10px;
+        font-size: 11px;
     }
 }
     </style>
