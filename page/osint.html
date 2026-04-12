@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N3akz CODE — CTF Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#000;
+      --red:#ff1333;
+      --red-dim:rgba(255,19,51,.55);
+      --white:#fff;
+      --grid-gap:56px;
+      --pad:46px;
+      --stroke:1.6px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--white);font-family:'Oswald',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh;display:grid;place-items:center;overflow-x:hidden}
+
+    .dots{
+      position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.22;
+      background-image:radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+      background-size:7px 7px;
+    }
+
+    .frame{
+      width:min(1220px,92vw);
+      border:1px solid var(--red-dim);
+      position:relative;
+      padding:calc(var(--pad) + 8px) clamp(18px,4vw,44px);
+      isolation:isolate;
+    }
+    .frame::before, .frame::after{content:"";position:absolute;inset:12px;pointer-events:none;border:1px solid rgba(255,19,51,.35)}
+    .frame::after{inset:auto 12px 12px 12px;top:unset;height:1px;background:linear-gradient(90deg,transparent, var(--red) 20%, var(--red) 80%, transparent)}
+
+    .tick{position:absolute;width:26px;height:26px;border-color:var(--red);opacity:.55}
+    .t1{left:10px;top:10px;border-left:1px solid;border-top:1px solid}
+    .t2{right:10px;top:10px;border-right:1px solid;border-top:1px solid}
+    .t3{left:10px;bottom:10px;border-left:1px solid;border-bottom:1px solid}
+    .t4{right:10px;bottom:10px;border-right:1px solid;border-bottom:1px solid}
+
+    .back-wrap{position:absolute;left:18px;top:18px;display:flex;gap:8px;align-items:center;z-index:3}
+    .back-btn{
+      font-family:'Roboto Mono',monospace;
+      font-size:12px;
+      color:var(--red);
+      background:transparent;
+      border:1px solid var(--red);
+      padding:6px 10px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      cursor:pointer;
+      border-radius:4px;
+      transition:all .12s ease;
+    }
+    .back-btn:hover{ background:var(--red); color:#110A0C; transform:translateY(-1px); }
+
+    .rows{display:grid;row-gap:var(--grid-gap)}
+    .row{display:grid;grid-template-columns:1fr;align-items:center}
+    .row + .row{position:relative}
+    .row + .row::before{content:"";position:absolute;left:0;right:0;top:calc(var(--grid-gap)*-0.5);height:1px;background:rgba(255,19,51,.35)}
+
+    .meta{display:flex;gap:10px;align-items:center;margin-bottom:10px;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.04em}
+    .chip{padding:4px 8px;border:1px solid var(--red);text-transform:uppercase;line-height:1}
+    .chip--fill{background:var(--red);color:#110A0C;border-color:var(--red);font-weight:700}
+
+    .stack{display:flex;flex-direction:column;gap:8px}
+    .big{font-weight:700;text-transform:uppercase;line-height:.9}
+    .big--xl{font-size:clamp(40px,8.2vw,118px)}
+    .big--lg{font-size:clamp(28px,6vw,76px)}
+
+    .filled{color:var(--red)}
+    .outlined{color:transparent;-webkit-text-stroke:var(--stroke) var(--red);text-shadow:0 0 0 var(--red)}
+
+    .row--with-aside{grid-template-columns:1.4fr .9fr;gap:40px}
+    .aside{font-family:'Roboto Mono',monospace;font-size:12px;line-height:1.55;color:#dcdcdc;opacity:.9;max-width:460px}
+    .aside b{color:#fff}
+
+    .aside-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+    .read-link{
+      font-family:'Roboto Mono', monospace;
+      font-size:12px;
+      letter-spacing:.08em;
+      color:var(--red);
+      text-decoration:none;
+      text-transform:uppercase;
+      opacity:.9;
+    }
+    .read-link:hover{ text-decoration:underline; opacity:1; }
+
+    .row:hover .outlined{color:var(--red);-webkit-text-stroke:0}
+
+    @media (max-width:900px){
+      .row--with-aside{grid-template-columns:1fr}
+      .aside{max-width:none}
+      .aside-wrap{align-items:flex-start}
+      .rows{row-gap:42px}
+      .frame{padding:var(--pad) 18px}
+      .back-wrap{left:12px; top:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="dots"></div>
+  <main class="frame">
+    <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
+
+    <div class="back-wrap">
+      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+    </div>
+
+    <section class="rows" aria-label="CTF challenges">
+      <div class="row row--with-aside">
+        <div>
+          <div class="meta">
+            <span class="chip chip--fill">HNX05_OSINT</span>
+            <span class="chip">RS_FT-4:1</span>
+          </div>
+
+          <div class="stack">
+            <h2 class="big big--xl" style="color:#fff">H&amp;M Ticket</h2>
+            <h3 class="big big--lg outlined">RECEIPT PIVOT -> HISTORIC REVIEW -> SUPPLIER TRACE</h3>
+          </div>
+        </div>
+
+        <div class="aside-wrap">
+          <p class="aside">
+            Start from a retail receipt, recover the exact product reference, pivot through a review dated 17 October 2020, then trace the supplier country from H&amp;M disclosure data.
+          </p>
+          <a class="read-link" href="/writeups/hnx05_hm_ticket_osint.md">READ THE WRITE-UP →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
