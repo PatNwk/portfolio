@@ -15,9 +15,15 @@
     font-family: 'Arial', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .title {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .career {
@@ -196,12 +202,12 @@ h2 {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px; 
+        padding: 0 15px;
     }
     .title {
         justify-content: center;
         text-align: center;
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .career {
@@ -218,7 +224,7 @@ h2 {
     .full-width-container {
         flex-direction: column;
         text-align: center;
-        padding: 30px;
+        padding: 24px 20px;
     }
 
     .project-image {
@@ -240,8 +246,8 @@ h2 {
 
 @media (max-width: 480px) {
     .container {
-        width: 95%; 
-        padding: 0; 
+        width: 100%;
+        padding: 0 16px;
         margin: 20px auto;
     }
     .title {
@@ -251,8 +257,9 @@ h2 {
     }
     
     .career {
-        font-size: 3.5rem; 
+        font-size: 3.5rem;
         max-width: 100%;
+        line-height: 0.92;
     }
 
     .journey {
@@ -263,14 +270,16 @@ h2 {
     }
     
     .description {
-        padding: 0 15px; 
+        padding: 0;
         margin: 20px auto;
         width: 100%;
         box-sizing: border-box;
+        font-size: 1rem;
     }
 
     .full-width-container {
-        padding: 20px;
+        padding: 20px 16px;
+        margin-top: 28px;
     }
 
     .project-image {
@@ -279,13 +288,18 @@ h2 {
 
     .text-content {
         width: 100%;
+        text-align: left;
     }
 
     .text-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
     }
 
     .text-content p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 }

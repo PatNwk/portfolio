@@ -107,19 +107,28 @@
 
     <script>
         const menuIcon = document.querySelector('.menu-icon');
-        const nav = document.querySelector('nav');
+        const nav = document.getElementById('main-nav');
 
-        menuIcon.addEventListener('click', () => {
-            nav.classList.toggle('open');
-            menuIcon.classList.toggle('open');
-        });
-
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('open');
-                menuIcon.classList.remove('open');
+        if (menuIcon && nav) {
+            menuIcon.addEventListener('click', () => {
+                nav.classList.toggle('open');
+                menuIcon.classList.toggle('open');
             });
-        });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    menuIcon.classList.remove('open');
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    nav.classList.remove('open');
+                    menuIcon.classList.remove('open');
+                }
+            });
+        }
 
 
     </script>

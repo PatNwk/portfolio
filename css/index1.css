@@ -45,11 +45,17 @@
     font-family: 'Arial', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70vh;
+    gap: 32px;
+    padding: 0 5%;
 }
 
 .hero-text h1 {
@@ -57,7 +63,7 @@
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.2;
-    margin-left: 10%;
+    margin-left: 0;
 }
 
 .hero-image img {
@@ -70,7 +76,7 @@
     max-width: 300px;
     text-align: right;
     font-weight: bold;
-    margin-right: 10%;
+    margin-right: 0;
 }
 
 .quote {
@@ -81,7 +87,7 @@
     line-height: 1.4;
     position: relative;
     margin-bottom: 10%;
-    margin-top: 70%;
+    margin-top: 52rem;
     margin-left: 10%;
 }
 
@@ -299,6 +305,7 @@
         flex-direction: column;
         height: auto;
         text-align: center;
+        padding-top: 40px;
     }
 
     .hero-text h1 {
@@ -319,33 +326,79 @@
     .parallax-text {
         font-size: 8rem;
     }
+
+    .parallax-image {
+        width: 260px;
+    }
+
+    .quote {
+        margin-top: 34rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 24px;
+        max-width: 720px;
+    }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        align-items: flex-start;
+        text-align: left;
+        padding: 24px 20px 0;
+        gap: 20px;
+    }
+
+    .hero-text,
+    .hero-code,
+    .hero-description {
+        width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .hero-description {
+        max-width: none;
+        text-align: left;
+        font-size: 1rem;
+    }
+
     .quote {
-        font-size: 2rem;
-        max-width: 90%;
-        margin: 40px auto;
+        font-size: 1.95rem;
+        max-width: none;
+        margin: 56px 0 0;
+        padding: 0 20px;
+        line-height: 1.25;
     }
 
     .parallax-text {
-        font-size: 6rem;
-        top: 15%;
+        position: static;
+        transform: none;
+        font-size: clamp(3rem, 17vw, 5rem);
+        line-height: 0.95;
+        margin-bottom: 24px;
     }
 
     .parallax-images {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: center;
-        gap: 50px;
+        gap: 16px;
+        margin: 0;
     }
 
     .parallax-image {
-        position: relative;
-        width: 80%;
+        position: static;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        transform: none !important;
     }
 
     .france, .pologne, .Shoot {
-        position: relative;
+        position: static;
         top: auto;
         left: auto;
         right: auto;
@@ -377,7 +430,9 @@
     }
 
     .btn {
-        width: 80%;
+        width: 100%;
+        max-width: 320px;
+        display: inline-block;
     }
 }
 
@@ -387,7 +442,8 @@
     }
 
     .quote {
-        font-size: 1.8rem;
+        font-size: 1.55rem;
+        padding: 0 16px;
     }
 
     .parallax-text {

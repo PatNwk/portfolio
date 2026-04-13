@@ -206,7 +206,7 @@
 
     <script>
         const menuIcon = document.querySelector('.menu-icon');
-        const mainNav = document.querySelector('nav');
+        const mainNav = document.getElementById('main-nav');
 
         if (menuIcon && mainNav) {
             menuIcon.addEventListener('click', () => {
@@ -219,6 +219,13 @@
                     mainNav.classList.remove('open');
                     menuIcon.classList.remove('open');
                 });
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    mainNav.classList.remove('open');
+                    menuIcon.classList.remove('open');
+                }
             });
         }
 

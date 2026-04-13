@@ -5,7 +5,8 @@ header {
     align-items: center;
     padding: 20px;
     width: 100%;
-    position: relative; 
+    position: relative;
+    gap: 20px;
 }
 
 /* Logo Styling */
@@ -60,9 +61,11 @@ nav a:hover {
 
 /* Style de l'icône Hamburger */
 .menu-icon {
-    display: none; 
+    display: none;
     font-size: 30px;
     cursor: pointer;
+    line-height: 1;
+    z-index: 30;
 }
 
 /* ------------------------------------------- */
@@ -75,27 +78,31 @@ nav a:hover {
         padding: 15px;
     }
     nav ul {
-        gap: 10px; 
+        gap: 10px;
     }
 }
 
 /* Adaptation pour téléphones : Activation du menu Hamburger */
-@media (max-width: 600px) {
-    
+@media (max-width: 768px) {
     header {
-        justify-content: space-between; 
-        padding: 15px 20px;
+        justify-content: space-between;
+        padding: 16px 18px;
+        gap: 12px;
     }
 
     nav {
-        display: none; 
+        display: none;
         position: absolute;
-        top: 60px; 
-        left: 0;
-        width: 100%;
-        background-color: white; 
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        z-index: 10;
+        top: calc(100% + 8px);
+        left: 16px;
+        right: 16px;
+        width: auto;
+        background-color: white;
+        border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        z-index: 20;
     }
 
     nav.open {
@@ -103,26 +110,48 @@ nav a:hover {
     }
 
     nav ul {
-        flex-direction: column; 
+        flex-direction: column;
+        align-items: stretch;
         text-align: center;
-        padding: 10px 0;
+        padding: 8px 0;
         gap: 0;
     }
 
     nav ul li {
-        padding: 15px 0;
-        border-bottom: 1px solid #eee; 
+        border-bottom: 1px solid #eee;
     }
-    
+
     nav ul li:last-child {
         border-bottom: none;
+    }
+
+    nav a {
+        display: block;
+        padding: 16px 20px;
+        font-size: 1rem;
     }
 
     .menu-icon {
         display: block;
     }
-    
-    nav {
+
+    .menu-controls {
+        gap: 10px;
+        margin-left: auto;
+    }
+
+    .toggle-theme {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 22px;
+    }
+
+    nav {
+        left: 12px;
+        right: 12px;
     }
 }
