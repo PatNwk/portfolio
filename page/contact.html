@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/contact.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <script src="/js/scriptC.js" defer></script>
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/scriptC.js" defer></script>
 
     <title>Contact</title>
 </head>
@@ -19,16 +19,16 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/index.html">PN</a>
+            <a href="../index.html">PN</a>
         </div>
 
         <nav id="main-nav">
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/page/about.html">About</a></li>
-                <li><a href="/page/portfolio.html">Portfolio</a></li>
-                <li><a href="/page/ctf.html">CTF</a></li>
-                <li><a href="/page/contact.html">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./ctf.html">CTF</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
 
@@ -48,18 +48,17 @@
                 <div class="contact-info">
                     <div>
                         <h3>AVAILABILITY</h3>
-                        <p>Please **contact me directly** <br>to discuss my current availability.</p>
+                        <p>Please <strong>contact me directly</strong> <br>to discuss my current availability.</p>
                     </div>
                     <div>
                         <h3>GET IN TOUCH</h3>
                         <p>patrick.nowak@ynov.com</p>
-                        <p>+33 6 61 03 65 45</p>
                     </div>
                 </div>
             </div>
 
             <div class="image1">
-                <img src="/images/moii.jpg" alt="Profile Picture">
+                <img src="../images/moii.jpg" alt="Profile Picture">
             </div>
         </section>
     </main>
@@ -79,60 +78,15 @@
             </div>
 
             <div class="social-media-links">
-                <a href="https://github.com/PatNwk" target="_blank" class="social-icon">
-                    <img src="/images/github.png" alt="GitHub" width="30" height="30">
+                <a href="https://github.com/PatNwk" target="_blank" class="social-icon" rel="noopener noreferrer">
+                    <img src="../images/github.png" alt="GitHub" width="30" height="30">
                 </a>
-                <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon">
-                    <img src="/images/linkedin.png" alt="LinkedIn" width="30" height="30">
+                <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon" rel="noopener noreferrer">
+                    <img src="../images/linkedin.png" alt="LinkedIn" width="30" height="30">
                 </a>
             </div>
         </div>
     </footer>
-
-    <script>
-        function updateTime() {
-            const timeElement = document.getElementById('current-time-location');
-            if (timeElement) {
-                const now = new Date();
-
-                const timeString = now.toLocaleTimeString('en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: false,
-                    timeZone: 'Europe/Paris'
-                });
-
-                timeElement.textContent = `${timeString} Auribeau, PACA`;
-            }
-        }
-
-        updateTime();
-        setInterval(updateTime, 60000);
-
-        const menuIcon = document.querySelector('.menu-icon');
-        const nav = document.getElementById('main-nav');
-
-        if (menuIcon && nav) {
-            menuIcon.addEventListener('click', () => {
-                nav.classList.toggle('open');
-                menuIcon.classList.toggle('open');
-            });
-
-            nav.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('open');
-                    menuIcon.classList.remove('open');
-                });
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    nav.classList.remove('open');
-                    menuIcon.classList.remove('open');
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>

@@ -7,11 +7,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/index1.css" />
-  <script src="/js/index.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/index1.css" />
+  <script src="../js/index.js" defer></script>
 
 
   <style>
@@ -77,12 +77,12 @@
     <div class="logo">
         <a href="../index.html">PN</a>
     </div>
-    <nav>
+    <nav id="main-nav">
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="/page/about.html">About</a></li>
-            <li><a href="/page/portfolio.html">Portfolio</a></li>
-            <li><a href="/page/contact.html">Contact</a></li>
+            <li><a href="../page/about.html">About</a></li>
+            <li><a href="../page/portfolio.html">Portfolio</a></li>
+            <li><a href="../page/contact.html">Contact</a></li>
             <li><a href="../stage-b2/index.html">Internship B2 (2025)</a></li>
         </ul>
     </nav>
@@ -112,9 +112,9 @@
       <article class="stage-card">
         <h2>Summary</h2>
         <p>
-          This section presents my **B2 internship** completed at **VIApass**, responsible for the
-          connectivity of the **Palais des Festivals** (Cannes). I describe the context, environment,
-          **contributions** (unified mapping, "event" view, playbooks), and **experience feedback**
+          This section presents my <strong>B2 internship</strong> completed at <strong>VIApass</strong>, responsible for the
+          connectivity of the <strong>Palais des Festivals</strong> (Cannes). I describe the context, environment,
+          <strong>contributions</strong> (unified mapping, "event" view, playbooks), and <strong>experience feedback</strong>
           focused on readability and action.
         </p>
 
@@ -124,20 +124,20 @@
 
         <h2>Educational Objectives</h2>
         <ul class="stage-list">
-          <li>Applying **network** knowledge: VLANs, QoS, high-density Wi-Fi, actionable monitoring.</li>
-          <li>Structuring **operational documentation** ("public" diagrams, checklists, playbooks).</li>
-          <li>Improving **incident management**: better qualified tickets, clear decision path.</li>
-          <li>Strengthening **Field ↔ NOC communication** (symptoms vs. metrics, prioritization).</li>
+          <li>Applying <strong>network</strong> knowledge: VLANs, QoS, high-density Wi-Fi, actionable monitoring.</li>
+          <li>Structuring <strong>operational documentation</strong> ("public" diagrams, checklists, playbooks).</li>
+          <li>Improving <strong>incident management</strong>: better qualified tickets, clear decision path.</li>
+          <li>Strengthening <strong>Field ↔ NOC communication</strong> (symptoms vs. metrics, prioritization).</li>
         </ul>
 
         <h2>Reading Recommendations</h2>
         <ul class="stage-list">
-          <li>**Company & Context** to understand the framework and challenges.</li>
-          <li>**Integration & Objectives** for onboarding and the roadmap.</li>
-          <li>**Mission #1** for a concrete achievement and its impact.</li>
-          <li>**Difficulties & Solutions** for operational experience feedback.</li>
-          <li>**Knowledge / Monitoring** for the link between training ↔ field.</li>
-          <li>**Report** for the final synthesis and proposed next steps.</li>
+          <li><strong>Company &amp; Context</strong> to understand the framework and challenges.</li>
+          <li><strong>Integration &amp; Objectives</strong> for onboarding and the roadmap.</li>
+          <li><strong>Mission #1</strong> for a concrete achievement and its impact.</li>
+          <li><strong>Difficulties &amp; Solutions</strong> for operational experience feedback.</li>
+          <li><strong>Knowledge / Monitoring</strong> for the link between training ↔ field.</li>
+          <li><strong>Report</strong> for the final synthesis and proposed next steps.</li>
         </ul>
       </article>
 
@@ -145,28 +145,28 @@
         <h2>Quick Links</h2>
         <div class="stage-links">
           <a class="stage-link" href="./entreprise-contexte/index.html">
-            <b>Company & Context</b>
+            <b>Company &amp; Context</b>
             <small>VIApass, network scope at the Palais des Festivals, operational challenges.</small>
             <div class="stage-badges">
               <span class="stage-badge">framework</span><span class="stage-badge">challenges</span>
             </div>
           </a>
           <a class="stage-link" href="./integration-objectifs/index.html">
-            <b>Integration & Objectives</b>
+            <b>Integration &amp; Objectives</b>
             <small>Onboarding, educational and operational goals, targeted deliverables.</small>
             <div class="stage-badges">
               <span class="stage-badge">onboarding</span><span class="stage-badge">deliverables</span>
             </div>
           </a>
           <a class="stage-link" href="./mission-1/index.html">
-            <b>Mission #1 — Monitoring & Mapping</b>
+            <b>Mission #1 — Monitoring &amp; Mapping</b>
             <small>Standardization of plans, "event" synthesis view, on-site tests.</small>
             <div class="stage-badges">
               <span class="stage-badge">mapping</span><span class="stage-badge">dashboards</span>
             </div>
           </a>
           <a class="stage-link" href="./difficultes-solutions/index.html">
-            <b>Difficulties & Solutions</b>
+            <b>Difficulties &amp; Solutions</b>
             <small>Heterogeneous maps, alerting noise, Field ↔ NOC gateway.</small>
             <div class="stage-badges">
               <span class="stage-badge">experience feedback</span>
@@ -194,11 +194,28 @@
 
   <script>
     const menuIcon = document.querySelector('.menu-icon');
-    const nav = document.querySelector('nav');
+    const nav = document.getElementById('main-nav') || document.querySelector('header nav');
 
-    menuIcon.addEventListener('click', () => {
+    if (menuIcon && nav) {
+      menuIcon.addEventListener('click', () => {
         nav.classList.toggle('open');
-    });
-</script>
+        menuIcon.classList.toggle('open');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          menuIcon.classList.remove('open');
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          nav.classList.remove('open');
+          menuIcon.classList.remove('open');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

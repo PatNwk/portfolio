@@ -67,6 +67,9 @@ body {
     align-items: center;
     text-align: center;
     color: #ff0000;
+    line-height: 0.95;
+    overflow-wrap: anywhere;
+    padding: 40px 20px;
 }
 
 @media screen and (max-width: 1024px) {

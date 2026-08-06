@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — CTF Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -116,7 +116,7 @@
 
     <!-- Back button -->
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows" aria-label="CTF challenges">
@@ -139,7 +139,7 @@
           <p class="aside">
             A timestamp-string bug reuses keystream blocks. Craft a few requests, recover keystreams, reveal the secret.
           </p>
-          <a class="read-link" href="/writeups/buckeye2025_Clandescriptorius.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/buckeye2025_Clandescriptorius.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -162,7 +162,7 @@
           <p class="aside">
             A broken checksum breaks WOTS security — one legit signature can be extended into an admin signature.
           </p>
-          <a class="read-link" href="/writeups/buckeye2025_Nitwit.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/buckeye2025_Nitwit.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -185,7 +185,7 @@
           <p class="aside">
             Structured, periodic masks leak constraints. Filter, pair and brute-force to recover the flag.
           </p>
-          <a class="read-link" href="/writeups/infobahn2025_linearity.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/infobahn2025_linearity.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -199,7 +199,7 @@
 
           <div class="stack">
             <h2 class="big big--xl" style="color:#fff">LAZY BIGRAMS</h2>
-            <h3 class="big big--lg outlined">BIGRAM SUBSTITUTION & DOUBLE PHONETIC ENCODING</h3>
+            <h3 class="big big--lg outlined">BIGRAM SUBSTITUTION &amp; DOUBLE PHONETIC ENCODING</h3>
           </div>
         </div>
 
@@ -209,7 +209,7 @@
             Double phonetic encoding combined with fixed bigram substitution.
             DFS with pruning is used to reconstruct the flag efficiently.
           </p>
-          <a class="read-link" href="/writeups/lazy_bigrams_lactf.md">
+          <a class="read-link" href="../writeups/lazy_bigrams_lactf.md">
             READ THE WRITE-UP →
           </a>
         </div>
@@ -235,7 +235,7 @@
             RSA broken using Coppersmith’s attack on partially known primes.
             Exploits predictable digit structure to recover private keys.
           </p>
-          <a class="read-link" href="/writeups/six_seven_lactf.md">
+          <a class="read-link" href="../writeups/six_seven_lactf.md">
             READ THE WRITE-UP →
           </a>
         </div>
@@ -261,7 +261,7 @@
             Discrete log solved with Pohlig-Hellman on smooth group order.
             Weak group design leads to full key recovery.
           </p>
-          <a class="read-link" href="/writeups/the_clock_lactf.md">
+          <a class="read-link" href="../writeups/the_clock_lactf.md">
             READ THE WRITE-UP →
           </a>
         </div>
@@ -284,7 +284,7 @@
           <p class="aside">
             The RSA public exponent is not invertible modulo phi(n). Enumerate the modular 88th roots, recombine with CRT, and keep the flag-shaped plaintext.
           </p>
-          <a class="read-link" href="/writeups/crypto_faulty_machine.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/crypto_faulty_machine.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 

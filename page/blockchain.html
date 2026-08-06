@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — Blockchain Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -103,7 +103,7 @@
     <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
 
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows" aria-label="Blockchain CTF challenges">
@@ -124,7 +124,7 @@
           <p class="aside">
             Dynamic-field packing makes two passenger tuples collide. Reuse a valid approval digest for a new name, bypass the boarded-passenger check, and push totalPassengers over the target.
           </p>
-          <a class="read-link" href="/writeups/blockchain_extra_seat.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/blockchain_extra_seat.md">READ THE WRITE-UP →</a>
         </div>
       </div>
     </section>

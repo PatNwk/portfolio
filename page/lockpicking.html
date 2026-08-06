@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — Lockpicking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#050505;
@@ -314,9 +314,9 @@
 
   <main class="shell">
     <header class="topbar">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Back">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Back">← Back</button>
       <div class="logo">N3akz CODE</div>
-      <a class="menu-link" href="/page/cat.html">Categories</a>
+      <a class="menu-link" href="./cat.html">Categories</a>
     </header>
 
     <section class="hero">

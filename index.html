@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet">
     <title>Patrick Nowak - Portfolio</title>
 
     <link rel="stylesheet" href="css/index1.css">
@@ -24,7 +24,7 @@
 
         <nav id="main-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="page/about.html">About</a></li>
                 <li><a href="page/portfolio.html">Portfolio</a></li>
                 <li><a href="page/ctf.html">CTF</a></li>
@@ -38,69 +38,159 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Vigilant<br>Analytic<br>Resilient<br>Strategic</h1>
-            </div>
-            <div class="hero-code">
-                <pre><code class="language-dart">
-        Future secureSystems() async {
-            await identifyThreats();
-            await fortifyDefenses();
-            ensureResilience();
-        }
-                </code></pre>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-meta reveal" aria-label="Portfolio context">
+                <span>Patrick Nowak</span>
+                <span>Ynov Sophia</span>
+                <span>Networks / Security / CTF</span>
             </div>
 
-            <div class="hero-description">
-                <p>My passion is to **secure** digital infrastructures and applications. I aspire to develop robust
-                    **cybersecurity** solutions, anticipate vulnerabilities, and build a **reliable** and **protected**
-                    digital future.</p>
+            <div class="hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Portfolio 2026</p>
+                    <h1 id="hero-title">Security work with traces, not slogans.</h1>
+                    <p class="hero-description">B3 computer science student focused on infrastructure and cybersecurity.
+                        I keep this portfolio close to the work itself: configs, write-ups, field notes, screenshots and
+                        the small decisions that make a system understandable.</p>
+                    <div class="hero-actions" aria-label="Main portfolio actions">
+                        <a href="page/portfolio.html" class="btn btn-primary">Projects archive</a>
+                        <a href="page/ctf.html" class="btn btn-secondary">CTF notes</a>
+                    </div>
+                </div>
+
+                <aside class="hero-board reveal" aria-label="Portfolio visual archive">
+                    <figure class="board-photo board-photo-main">
+                        <img src="images/Hackin2025-41.jpg" alt="Patrick Nowak during a cybersecurity event">
+                        <figcaption>Hack'in 2025 / write-ups and on-site notes</figcaption>
+                    </figure>
+                    <figure class="board-photo board-photo-side">
+                        <img src="stage-b2/images/baies-cables.jpg" alt="Network rack and cabling from stage documentation">
+                        <figcaption>stage B2 / cabling and network checks</figcaption>
+                    </figure>
+                    <div class="board-note">
+                        <span>recent work</span>
+                        <strong>HTB session notes, Cisco labs, Linux admin, SOC-AI prototype</strong>
+                    </div>
+                </aside>
+            </div>
+
+            <dl class="hero-stats reveal" aria-label="Portfolio highlights">
+                <div>
+                    <dt>20+</dt>
+                    <dd>documented CTF solves</dd>
+                </div>
+                <div>
+                    <dt>09</dt>
+                    <dd>selected school and personal projects</dd>
+                </div>
+                <div>
+                    <dt>B3</dt>
+                    <dd>cybersecurity specialization</dd>
+                </div>
+            </dl>
         </section>
 
-        <section class="parallax-section">
-            <div class="parallax-container">
-                <div class="parallax-text">Secure the World</div>
+        <section class="case-ledger section-band" aria-labelledby="ledger-title">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Selected traces</p>
+                <h2 id="ledger-title">The work is easier to trust when the evidence is visible.</h2>
             </div>
-            <div class="parallax-images">
-                <img src="images/moi.JPG" alt="Image 1" class="parallax-image france">
-                <img src="images/Vector 8.svg" alt="Image 2" class="parallax-image pologne">
-                <img src="images/moi1.png" alt="Image 3" class="parallax-image Shoot">
+
+            <div class="ledger-list">
+                <article class="ledger-item reveal">
+                    <span class="ledger-number">01</span>
+                    <div class="ledger-copy">
+                        <p class="ledger-type">network lab</p>
+                        <h3>Cisco topology and configuration practice</h3>
+                        <p>Addressing plans, routers, switches and connectivity tests documented as a repeatable lab
+                            instead of a one-off screenshot.</p>
+                    </div>
+                    <a href="page/portfolio.html" class="ledger-link">view</a>
+                </article>
+                <article class="ledger-item reveal">
+                    <span class="ledger-number">02</span>
+                    <div class="ledger-copy">
+                        <p class="ledger-type">security operations</p>
+                        <h3>SOC-AI prototype</h3>
+                        <p>A practical monitoring concept around event triage, detection logic and incident response
+                            automation ideas.</p>
+                    </div>
+                    <a href="page/portfolio.html" class="ledger-link">view</a>
+                </article>
+                <article class="ledger-item reveal">
+                    <span class="ledger-number">03</span>
+                    <div class="ledger-copy">
+                        <p class="ledger-type">ctf notebook</p>
+                        <h3>Web, reverse, crypto, pwn and forensics write-ups</h3>
+                        <p>Problem-solving notes written to preserve the exploit path, the failed assumptions and the
+                            final reasoning.</p>
+                    </div>
+                    <a href="page/cat.html" class="ledger-link">read</a>
+                </article>
             </div>
         </section>
 
-        <section class="quote">
-            <h2>Security is not a product, it's a continuous process.</h2>
-            <p class="author">- Bruce Schneier</p>
+        <section class="image-rack reveal" aria-label="Visual project archive">
+            <figure>
+                <img src="stage-b2/images/netoollite-vlan950.jpg" alt="Netool Lite VLAN test during stage work" loading="lazy">
+                <figcaption>VLAN 950 check / field validation</figcaption>
+            </figure>
+            <figure>
+                <img src="images/cisco.jpg" alt="Cisco project visual" loading="lazy">
+                <figcaption>Cisco lab / topology configuration</figcaption>
+            </figure>
+            <figure>
+                <img src="images/soc-ia.png" alt="SOC IA dashboard project visual" loading="lazy">
+                <figcaption>SOC-AI / detection prototype</figcaption>
+            </figure>
         </section>
 
-        <section class="about-me">
+        <section class="field-notes section-band" aria-labelledby="notes-title">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Working style</p>
+                <h2 id="notes-title">My best projects leave a trail someone else can follow.</h2>
+            </div>
+            <ol class="notes-list">
+                <li class="reveal">
+                    <span>01</span>
+                    <p>Start with the boring facts: topology, versions, permissions, logs, expected behavior.</p>
+                </li>
+                <li class="reveal">
+                    <span>02</span>
+                    <p>Keep the proof reproducible: command, payload, capture, screenshot or config excerpt.</p>
+                </li>
+                <li class="reveal">
+                    <span>03</span>
+                    <p>Write the fix like a handoff: what changed, why it changed and how to test it again.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="about-me reveal">
             <div class="about-container">
                 <div class="about-image">
-                    <img src="images/Hackin2025-41.jpg" alt="Profile Picture">
+                    <img src="images/moi.JPG" alt="Patrick Nowak profile picture" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h2>Who am I?</h2>
-                    <p>A third-year Bachelor of Computer Science student at Sophia Ynov Campus, I bring a solid
-                        foundation in **Systems and Network Administration**. I am currently specializing in
-                        **Cybersecurity**, aiming to transition from robust infrastructure management to advanced
-                        digital defense.</p>
-                    <p>My portfolio demonstrates my dual focus: effective network architecture and proactive security
-                        projects, including **threat analysis**, **network hardening**, and **risk management**. I
-                        combine hands-on technical reliability with a forward-thinking security mindset. Feel free to
-                        contact me for any collaboration or discussion in this exciting field.</p>
+                    <p>I am a third-year computer science student at Sophia Ynov Campus, with a base in
+                        <strong>systems and network administration</strong>: Linux, Cisco labs, addressing, cabling,
+                        services and troubleshooting.</p>
+                    <p>I am now pushing that base toward <strong>cybersecurity</strong>. This portfolio is my technical
+                        logbook: project notes, CTF reasoning, stage documentation and the decisions behind the final
+                        result.</p>
                 </div>
             </div>
             <div class="social-cv">
                 <div class="social-media-links">
-                    <a href="https://github.com/PatNwk" target="_blank" class="social-icon">
+                    <a href="https://github.com/PatNwk" target="_blank" class="social-icon" rel="noopener noreferrer">
                         <img src="images/github.png" alt="GitHub" width="30" height="30">
                     </a>
-                    <a href="https://www.linkedin.com/in/patrick-nowak-479503333/" target="_blank" class="social-icon">
+                    <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon" rel="noopener noreferrer">
                         <img src="images/linkedin.png" alt="LinkedIn" width="30" height="30">
                     </a>
                 </div>
-                <a href="CV-pro.pdf" download class="btn">Download My Resume</a>
+                <a href="CV-P.pdf" download class="btn btn-light">Download My Resume</a>
             </div>
         </section>
     </main>
@@ -144,10 +234,10 @@
             </div>
 
             <div class="social-media-links">
-                <a href="https://github.com/PatNwk" target="_blank" class="social-icon">
+                <a href="https://github.com/PatNwk" target="_blank" class="social-icon" rel="noopener noreferrer">
                     <img src="images/github.png" alt="GitHub" width="30" height="30">
                 </a>
-                <a href="https://www.linkedin.com/in/patrick-nowak-479503333/" target="_blank" class="social-icon">
+                <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon" rel="noopener noreferrer">
                     <img src="images/linkedin.png" alt="LinkedIn" width="30" height="30">
                 </a>
             </div>

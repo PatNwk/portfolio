@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — CTF Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -116,7 +116,7 @@
 
     <!-- Back button -->
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows">
@@ -140,7 +140,7 @@
       <p class="aside">
         A classic introductory reverse challenge: the binary stores dozens of fake flags in a table and checks only one. Identify the correct index in the ELF and extract the real flag.
       </p>
-      <a class="read-link" href="/writeups/glacier2025_rev_50.md">READ THE WRITE-UP →</a>
+      <a class="read-link" href="../writeups/glacier2025_rev_50.md">READ THE WRITE-UP →</a>
     </div>
   </div>
 
@@ -161,7 +161,7 @@
       <p class="aside">
         The protected message never left the binary. Recover the repeating XOR key, decrypt the bundled message table offline, and read the hidden entry.
       </p>
-      <a class="read-link" href="/writeups/rev_uncoding.md">READ THE WRITE-UP →</a>
+      <a class="read-link" href="../writeups/rev_uncoding.md">READ THE WRITE-UP →</a>
     </div>
   </div>
 
@@ -182,7 +182,7 @@
       <p class="aside">
         Function names lie. Extract the three AES keys, try the six possible decryption orders, and keep the only chain that reveals a valid flag.
       </p>
-      <a class="read-link" href="/writeups/rev_threekeys.md">READ THE WRITE-UP →</a>
+      <a class="read-link" href="../writeups/rev_threekeys.md">READ THE WRITE-UP →</a>
     </div>
   </div>
   

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — Misc Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -101,7 +101,7 @@
     <span class="tick t1"></span><span class="tick t2"></span><span class="tick t3"></span><span class="tick t4"></span>
 
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows" aria-label="Misc CTF challenges">
@@ -122,7 +122,7 @@
           <p class="aside">
             The checker wanted exact one-decimal formatting. Stable fixed-point output passes where a plain round() result can drift or be rejected.
           </p>
-          <a class="read-link" href="/writeups/misc_floating_circle.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/misc_floating_circle.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -143,7 +143,7 @@
           <p class="aside">
             Avoid unstable floating-point cubic formulas. Recover one exact real root, factor the polynomial, solve the quadratic cleanly, and format every answer reliably.
           </p>
-          <a class="read-link" href="/writeups/misc_cubic.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/misc_cubic.md">READ THE WRITE-UP →</a>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — CTF Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -116,7 +116,7 @@
 
     <!-- Back button -->
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows">
@@ -130,7 +130,7 @@
 
           <div class="stack">
             <h2 class="big big--xl" style="color:#fff">Prometheon</h2>
-            <h3 class="big big--lg outlined">Prompt-injection & context leaking.</h3>
+            <h3 class="big big--lg outlined">Prompt-injection &amp; context leaking.</h3>
           </div>
         </div>
 
@@ -139,7 +139,7 @@
           <p class="aside">
             Abuse allowed transforms and role confusion to extract secrets without direct disclosure: mask, combine, reconstruct. Human-in-the-loop exfiltration.
           </p>
-          <a class="read-link" href="/writeups/HTB_prometheon.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/HTB_prometheon.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -162,7 +162,7 @@
           <p class="aside">
             512-dim token vectors projected to 2D form a readable pattern — plotting exposes the flag directly through spatial layout.
           </p>
-          <a class="read-link" href="/writeups/HTB_Lost_in_Hyperspace.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/HTB_Lost_in_Hyperspace.md">READ THE WRITE-UP →</a>
         </div>
       </div>
     </section>

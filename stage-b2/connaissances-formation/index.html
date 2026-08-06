@@ -7,11 +7,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/index1.css" />
-  <script src="/js/index.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/header.css" />
+  <link rel="stylesheet" href="../../css/footer.css" />
+  <link rel="stylesheet" href="../../css/index1.css" />
+  <script src="../../js/index.js" defer></script>
 
 
   <style>
@@ -102,9 +102,9 @@
     <nav id="main-nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="/page/about.html">About</a></li>
-            <li><a href="/page/portfolio.html">Portfolio</a></li>
-            <li><a href="/page/contact.html">Contact</a></li>
+            <li><a href="../../page/about.html">About</a></li>
+            <li><a href="../../page/portfolio.html">Portfolio</a></li>
+            <li><a href="../../page/contact.html">Contact</a></li>
             <li><a href="../../stage-b2/index.html">Internship B2 (2025)</a></li>
         </ul>
     </nav>
@@ -128,7 +128,7 @@
 
 
     <section class="stage-hero">
-      <span class="stage-eyebrow">Learning & Resources</span>
+      <span class="stage-eyebrow">Learning &amp; Resources</span>
       <h1 class="stage-title">Knowledge ↔ Training / Monitoring</h1>
       <div class="stage-meta">
         <span class="stage-chip">VIApass</span>
@@ -144,13 +144,13 @@
       <article class="stage-card">
         <h2>Knowledge Mobilized (Coursework → Field)</h2>
         <ul class="stage-list">
-          <li><strong>Networks & Security</strong>: VLANs, QoS/prioritization, segmentation by profile, operation best practices.</li>
+          <li><strong>Networks &amp; Security</strong>: VLANs, QoS/prioritization, segmentation by profile, operation best practices.</li>
           <li><strong>Monitoring · SLI/SLO</strong>: selection of useful indicators (RSSI/SNR, median throughput, availability), adapted thresholds, actionable alerting.</li>
           <li><strong>ITIL / Incidents</strong>: structured ticketing (who/what/where/when), escalation, RCA (Root Cause Analysis), capitalization.</li>
-          <li><strong>Docs & Diagrams</strong>: unified legends, homogeneous naming, non-sensitive "public" version.</li>
+          <li><strong>Docs &amp; Diagrams</strong>: unified legends, homogeneous naming, non-sensitive "public" version.</li>
         </ul>
 
-        <h2>Monitoring & Observed Best Practices</h2>
+        <h2>Monitoring &amp; Observed Best Practices</h2>
         <ul class="stage-list">
           <li><strong>"Event" Dashboard</strong>: readable synthesis + drill-down by priority zone.</li>
           <li><strong>Pre-opening Checklists</strong> (network points, Wi-Fi, audiovisual gateways).</li>
@@ -190,9 +190,9 @@
 
         <h2>Recommended Internal Links</h2>
         <ul class="stage-list">
-          <li><a href="../entreprise-contexte/index.html">Company & Context</a> — framework, audiences, constraints.</li>
-          <li><a href="../mission-1/index.html">Mission #1</a> — monitoring & mapping, approach, and impact.</li>
-          <li><a href="../difficultes-solutions/index.html">Difficulties & Solutions</a> — real problems and remedies.</li>
+          <li><a href="../entreprise-contexte/index.html">Company &amp; Context</a> — framework, audiences, constraints.</li>
+          <li><a href="../mission-1/index.html">Mission #1</a> — monitoring &amp; mapping, approach, and impact.</li>
+          <li><a href="../difficultes-solutions/index.html">Difficulties &amp; Solutions</a> — real problems and remedies.</li>
           <li><a href="../bilan/index.html">Report</a> — synthesis and proposals.</li>
         </ul>
       </aside>
@@ -214,12 +214,29 @@
 
     <script>
       const menuIcon = document.querySelector('.menu-icon');
-      const nav = document.querySelector('nav');
+      const nav = document.getElementById('main-nav') || document.querySelector('header nav');
   
-      menuIcon.addEventListener('click', () => {
+      if (menuIcon && nav) {
+        menuIcon.addEventListener('click', () => {
           nav.classList.toggle('open');
-      });
-  </script>
+          menuIcon.classList.toggle('open');
+        });
+
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            menuIcon.classList.remove('open');
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 768) {
+            nav.classList.remove('open');
+            menuIcon.classList.remove('open');
+          }
+        });
+      }
+    </script>
 
   </main>
 </body>

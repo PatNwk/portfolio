@@ -6,27 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/portfolio1.css">
-    <link rel="stylesheet" href="/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/portfolio1.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/script_portfolio.js" defer></script>
 
-    <title>Career Journey</title>
+    <title>Patrick Nowak - Portfolio</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <a href="/index.html">PN</a>
+            <a href="../index.html">PN</a>
         </div>
 
         <nav id="main-nav">
             <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/page/about.html">About</a></li>
-                <li><a href="/page/portfolio.html">Portfolio</a></li>
-                <li><a href="/page/ctf.html">CTF</a></li>
-                <li><a href="/page/contact.html">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="./ctf.html">CTF</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
 
@@ -38,35 +39,52 @@
 
 
     <div class="container">
-        <h2>Works Page</h2>
+        <h2>Project Archive</h2>
         <div class="title">
-            <span class="career">PORTFOLIO</span>
-            <span class="journey">APPRENTICE</span>
+            <span class="career">PROJECT</span>
+            <span class="journey">LEDGER</span>
         </div>
         <div class="grid-container">
             <div>
-                <p class="description">I am a third-year computer science student at Ynov Sophia, passionate about code,
-                    problem-solving, and innovative technologies. Curious about digital solutions, I am committed to
-                    combining my technical skills and creativity to shape the future of technology.</p>
+                <p class="description">A selection of school, personal and security projects kept as an archive: what
+                    was built, what was configured, what was tested and where the source or notes live.</p>
             </div>
             <div>
-                <p class="description">I started learning code in high school, exploring various technologies and
-                    developing personal projects. Today, as a computer science student at Ynov Sophia, I am passionate
-                    about programming and capable of both <span class="highlight">developing applications and solving
-                        technical problems</span>, constantly seeking to explore the latest digital innovations.</p>
+                <p class="description">The through-line is practical engineering: <span class="highlight">networks,
+                        Linux, application code, detection logic and CTF reasoning</span>. Each entry is here because it
+                    leaves something concrete to inspect.</p>
             </div>
+        </div>
+        <div class="portfolio-stats" aria-label="Portfolio project highlights">
+            <article>
+                <strong>9</strong>
+                <span>projects</span>
+            </article>
+            <article>
+                <strong>20+</strong>
+                <span>write-ups</span>
+            </article>
+            <article>
+                <strong>6</strong>
+                <span>security fields</span>
+            </article>
         </div>
     </div>
     <div class="full-width-container project-container" data-delay="200">
-        <img src="/images/cisco.jpg" alt="Cisco Project" class="project-image move-on-scroll">
+        <img src="../images/cisco.jpg" alt="Cisco network configuration project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>Cisco Project - Networks and Configuration</h3>
+            <ul class="project-tags">
+                <li>Cisco</li>
+                <li>Routing</li>
+                <li>Switching</li>
+            </ul>
             <p>This project is an in-depth exploration of network configurations using <span
                     class="highlight">Cisco</span> technologies. It includes setting up <span class="highlight">network
                     topologies</span>, configuring <span class="highlight">routers</span> and <span
                     class="highlight">switches</span>, as well as connectivity testing.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/TD_Cisco" class="github-link" target="_blank">GitHub - TD Cisco</a>
+                <a href="https://github.com/PatNwk/TD_Cisco" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - TD Cisco</a>
             </p>
 
         </div>
@@ -74,69 +92,94 @@
 
 
     <div class="full-width-container project-container" data-delay="500">
-        <img src="/images/shoot.png" alt="Shoot-em-Up Project" class="project-image move-on-scroll">
+        <img src="../images/Shoot.png" alt="Shoot-em-Up game project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>Shoot-em-Up Project</h3>
+            <ul class="project-tags">
+                <li>Game logic</li>
+                <li>Collisions</li>
+                <li>2D</li>
+            </ul>
             <p>This project consists of a <span class="highlight">"Shoot-em-Up"</span> game developed with <span
                     class="highlight">2D</span> game logic. It includes elements like <span
                     class="highlight">spaceships</span>, <span class="highlight">enemies</span>, and shooting mechanisms
                 with <span class="highlight">collision</span> management.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/Shoot-em-Up" class="github-link" target="_blank">GitHub -
+                <a href="https://github.com/PatNwk/Shoot-em-Up" class="github-link" target="_blank" rel="noopener noreferrer">GitHub -
                     Shoot-em-Up</a>
             </p>
         </div>
     </div>
 
     <div class="full-width-container project-container" data-delay="800">
-        <img src="/images/soc-ia.png" alt="SOC IA Project" class="project-image move-on-scroll">
+        <img src="../images/soc-ia.png" alt="AI SOC monitoring project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>SOC IA Project - Security Operations Center</h3>
+            <ul class="project-tags">
+                <li>SOC</li>
+                <li>AI</li>
+                <li>Detection</li>
+            </ul>
             <p>This project focuses on the development of an <span class="highlight">AI-powered Security Operations Center (SOC)</span>. It includes the implementation of <span class="highlight">machine learning algorithms</span> for threat detection, <span class="highlight">incident response automation</span>, and <span class="highlight">real-time monitoring</span> of security events.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/Crypt0nik/SOC-AI" class="github-link" target="_blank">GitHub - SOC IA</a>
+                <a href="https://github.com/Crypt0nik/SOC-AI" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - SOC IA</a>
             </p>
         </div>
     </div>
 
     <div class="full-width-container project-container" data-delay="800">
-        <img src="/images/Linux.png" alt="Linux Project" class="project-image move-on-scroll">
+        <img src="../images/Linux.png" alt="Linux system administration project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>Linux Project - System and Network</h3>
+            <ul class="project-tags">
+                <li>Linux</li>
+                <li>Bash</li>
+                <li>Permissions</li>
+            </ul>
             <p>In this project, I explore the fundamental principles of the <span class="highlight">Linux</span>
                 operating system, including <span class="highlight">shell</span> commands, <span
                     class="highlight">user</span> management, access rights, and system administration.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/Linux" class="github-link" target="_blank">GitHub - Linux</a>
+                <a href="https://github.com/PatNwk/Linux" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - Linux</a>
             </p>
         </div>
     </div>
 
     <div class="full-width-container project-container" data-delay="800">
         <div class="background-effect"></div>
-        <img src="/images/php.png" alt="PHP Project" class="project-image move-on-scroll">
+        <img src="../images/php.png" alt="PHP web development project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>PHP Project - Web Development</h3>
+            <ul class="project-tags">
+                <li>PHP</li>
+                <li>Forms</li>
+                <li>Database</li>
+            </ul>
             <p>This project is an in-depth exploration of web development with <span class="highlight">PHP</span>. It
                 includes concepts like form handling, database integration, and the creation of dynamic applications.
             </p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/PHP" class="github-link" target="_blank">GitHub - PHP</a>
+                <a href="https://github.com/PatNwk/PHP" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - PHP</a>
             </p>
         </div>
     </div>
 
     <div class="full-width-container project-container" data-delay="1000">
         <div class="background-effect"></div>
-        <img src="/images/firstlap.png" alt="FirstLap Project" class="project-image move-on-scroll">
+        <img src="../images/firstlap.png" alt="FirstLap automotive application project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>FirstLap Project - Automotive Application</h3>
+            <ul class="project-tags">
+                <li>App</li>
+                <li>Profiles</li>
+                <li>UX</li>
+            </ul>
             <p>The <span class="highlight">FirstLap</span> project is an application developed to connect <span
                     class="highlight">drivers</span> and <span class="highlight">sponsors</span> in the automotive
                 industry. It allows drivers to create a profile and showcase their performance, while sponsors can find
                 drivers based on their needs for events or partnerships.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/FirstLap" class="github-link" target="_blank">GitHub - FirstLap</a>
+                <a href="https://github.com/PatNwk/FirstLap" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - FirstLap</a>
             </p>
         </div>
     </div>
@@ -144,15 +187,20 @@
 
     <div class="full-width-container project-container" data-delay="1200">
         <div class="background-effect"></div>
-        <img src="/images/Ywallet.png" alt="C# Project" class="project-image move-on-scroll">
+        <img src="../images/Ywallet.png" alt="C# investment portfolio simulation project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>C# Project - Investment Portfolio Simulation</h3>
+            <ul class="project-tags">
+                <li>C#</li>
+                <li>Simulation</li>
+                <li>Finance</li>
+            </ul>
             <p>The <span class="highlight">C#</span> project simulates an <span class="highlight">investment
                     portfolio</span>, allowing users to track the performance of a set of financial assets. The
                 application offers features such as portfolio management, adding and tracking stocks, and analyzing
                 gains and losses over different periods.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/PatNwk/C-" class="github-link" target="_blank">GitHub - C#</a>
+                <a href="https://github.com/PatNwk/C-" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - C#</a>
             </p>
         </div>
     </div>
@@ -160,14 +208,19 @@
 
     <div class="full-width-container project-container" data-delay="1400">
         <div class="background-effect"></div>
-        <img src="/images/Reflexe.png" alt="Reflex Project" class="project-image move-on-scroll">
+        <img src="../images/Reflexe.png" alt="Reflex showcase website project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>Reflex Project - Showcase Website</h3>
+            <ul class="project-tags">
+                <li>Website</li>
+                <li>Gallery</li>
+                <li>Frontend</li>
+            </ul>
             <p>In this project, I created a <span class="highlight">showcase website</span> featuring <span
                     class="highlight">motorcycle</span> and <span class="highlight">car photos</span>. The site is
                 designed to highlight these vehicles with a modern design and interactive galleries.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/Dantr3b/Reflex" class="github-link" target="_blank">GitHub - Reflex</a>
+                <a href="https://github.com/Dantr3b/Reflex" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - Reflex</a>
             </p>
         </div>
     </div>
@@ -175,31 +228,41 @@
 
     <div class="full-width-container project-container" data-delay="1600">
         <div class="background-effect"></div>
-        <img src="/images/Group 384-1.png" alt="Tymos Project" class="project-image move-on-scroll">
+        <img src="../images/group-384-1.png" alt="Tymos location game project" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>Tymos Project - Location Game</h3>
+            <ul class="project-tags">
+                <li>Flutter</li>
+                <li>Geolocation</li>
+                <li>Game</li>
+            </ul>
             <p>In this game, you receive an image of a location in the city and must reach it as quickly as possible.
                 The faster you are, the more points you earn! Developed with <span class="highlight">Flutter</span>,
                 this game uses geolocation to challenge you across the city.</p>
             <p>Find the complete project here:
-                <a href="https://github.com/Killian-rx/Tymos" class="github-link" target="_blank">GitHub - Tymos</a>
+                <a href="https://github.com/Killian-rx/Tymos" class="github-link" target="_blank" rel="noopener noreferrer">GitHub - Tymos</a>
             </p>
         </div>
     </div>
 
     <div class="full-width-container project-container" data-delay="1800">
         <div class="background-effect"></div>
-        <img src="/images/Hackin2025-41.jpg" alt="HTB Write-ups" class="project-image move-on-scroll">
+        <img src="../images/Hackin2025-41.jpg" alt="Hack The Box write-ups collection" class="project-image move-on-scroll" loading="lazy">
         <div class="text-content">
             <h3>HTB Write-ups - April 2026 Session</h3>
+            <ul class="project-tags">
+                <li>pwn</li>
+                <li>reverse</li>
+                <li>forensics</li>
+            </ul>
             <p>I documented a new batch of <span class="highlight">Hack The Box write-ups</span> covering <span
                     class="highlight">pwn</span>, <span class="highlight">reverse</span>, <span
                     class="highlight">crypto</span>, <span class="highlight">web</span>, <span
                     class="highlight">blockchain</span>, and <span class="highlight">forensics / misc</span>.</p>
             <p>Browse the collection here:
-                <a href="/page/cat.html" class="github-link">CTF categories</a>
+                <a href="./cat.html" class="github-link">CTF categories</a>
                 /
-                <a href="/writeups/index.md" class="github-link">Session index</a>
+                <a href="../writeups/index.md" class="github-link">Session index</a>
             </p>
         </div>
     </div>
@@ -215,48 +278,15 @@
             </div>
 
             <div class="social-media-links">
-                <a href="https://github.com/PatNwk" target="_blank" class="social-icon">
-                    <img src="/images/github.png" alt="GitHub" width="30" height="30">
+                <a href="https://github.com/PatNwk" target="_blank" class="social-icon" rel="noopener noreferrer">
+                    <img src="../images/github.png" alt="GitHub" width="30" height="30">
                 </a>
-                <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon">
-                    <img src="/images/linkedin.png" alt="LinkedIn" width="30" height="30">
+                <a href="https://www.linkedin.com/in/nowak-patrick/" target="_blank" class="social-icon" rel="noopener noreferrer">
+                    <img src="../images/linkedin.png" alt="LinkedIn" width="30" height="30">
                 </a>
             </div>
         </div>
     </footer>
-    <script>
-        const projectContainers = document.querySelectorAll('.project-container');
-        const projectImages = document.querySelectorAll('.move-on-scroll');
-
-        function revealProjectsOnScroll() {
-            const scrollY = window.scrollY;
-
-            projectContainers.forEach(project => {
-                const rect = project.getBoundingClientRect();
-                const projectTop = rect.top;
-                const projectBottom = rect.bottom;
-                const delay = parseInt(project.getAttribute('data-delay'));
-
-                if (projectTop < window.innerHeight && projectBottom > 0) {
-                    setTimeout(() => {
-                        project.classList.add('visible');
-                    }, delay);
-                }
-            });
-
-            projectImages.forEach(img => {
-                const rect = img.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    img.style.transform = 'translateY(0)';
-                } else {
-                    img.style.transform = 'translateY(50px)';
-                }
-            });
-        }
-        window.addEventListener('scroll', revealProjectsOnScroll);
-    </script>
-
-
     <script>
         const menuIcon = document.querySelector('.menu-icon');
         const nav = document.getElementById('main-nav');

@@ -8,11 +8,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/footer.css" />
-  <link rel="stylesheet" href="/css/index1.css" />
-  <script src="/js/index.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/header.css" />
+  <link rel="stylesheet" href="../../css/footer.css" />
+  <link rel="stylesheet" href="../../css/index1.css" />
+  <script src="../../js/index.js" defer></script>
 
 
   <style>
@@ -114,9 +114,9 @@
     <nav id="main-nav">
         <ul>
             <li><a href="../../index.html">Home</a></li>
-            <li><a href="/page/about.html">About</a></li>
-            <li><a href="/page/portfolio.html">Portfolio</a></li>
-            <li><a href="/page/contact.html">Contact</a></li>
+            <li><a href="../../page/about.html">About</a></li>
+            <li><a href="../../page/portfolio.html">Portfolio</a></li>
+            <li><a href="../../page/contact.html">Contact</a></li>
             <li><a href="../../stage-b2/index.html">Internship B2 (2025)</a></li>
         </ul>
     </nav>
@@ -152,10 +152,10 @@
       <article class="stage-card">
         <h2>Summary</h2>
         <p>
-          This internship immersed me in **event network operations** at the **Palais des Festivals**.
+          This internship immersed me in <strong>event network operations</strong> at the <strong>Palais des Festivals</strong>.
           The objective: ensure stable connectivity for diverse audiences (exhibitors, staff, press, visitors) during 
-          <em>peak traffic periods</em>. I worked on **readability of floor plans**, the **actionability
-          of dashboards**, and the **fluidity of incident management**.
+          <em>peak traffic periods</em>. I worked on <strong>readability of floor plans</strong>, the <strong>actionability
+          of dashboards</strong>, and the <strong>fluidity of incident management</strong>.
         </p>
 
         <div class="stage-note">
@@ -165,10 +165,10 @@
 
         <h2>Key Contributions</h2>
         <ul class="stage-list">
-          <li>Creation of **mapping templates**: unified legends, homogeneous naming, "public" version.</li>
-          <li>Proposal of an **"event view"**: synthesis + drill-down by priority zone.</li>
-          <li>**Intervention Playbooks**: 1) rapid diagnosis 2) escalation 3) synthetic post-mortem.</li>
-          <li>Improvement of **ticket quality** via a minimal form (who/what/where/when).</li>
+          <li>Creation of <strong>mapping templates</strong>: unified legends, homogeneous naming, "public" version.</li>
+          <li>Proposal of an <strong>"event view"</strong>: synthesis + drill-down by priority zone.</li>
+          <li><strong>Intervention Playbooks</strong>: 1) rapid diagnosis 2) escalation 3) synthetic post-mortem.</li>
+          <li>Improvement of <strong>ticket quality</strong> via a minimal form (who/what/where/when).</li>
         </ul>
 
         <h2>Skills Developed</h2>
@@ -241,8 +241,8 @@
     <section class="stage-card" style="margin-top:16px">
       <h2>Acknowledgements</h2>
       <p>
-        Thank you to the **VIApass** team for the welcome and guidance, and to the teams at the
-        **Palais des Festivals** for the field collaboration. This immersion gave me a concrete vision
+        Thank you to the <strong>VIApass</strong> team for the welcome and guidance, and to the teams at the
+        <strong>Palais des Festivals</strong> for the field collaboration. This immersion gave me a concrete vision
         of network demands in an event environment and reinforced my desire to continue in this path.
       </p>
     </section>
@@ -252,11 +252,28 @@
 
   <script>
     const menuIcon = document.querySelector('.menu-icon');
-    const nav = document.querySelector('nav');
+    const nav = document.getElementById('main-nav') || document.querySelector('header nav');
 
-    menuIcon.addEventListener('click', () => {
+    if (menuIcon && nav) {
+      menuIcon.addEventListener('click', () => {
         nav.classList.toggle('open');
-    });
-</script>
+        menuIcon.classList.toggle('open');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          menuIcon.classList.remove('open');
+        });
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          nav.classList.remove('open');
+          menuIcon.classList.remove('open');
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>N3akz CODE — CTF Section</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
   <style>
     :root{
       --bg:#000;
@@ -116,7 +116,7 @@
 
     <!-- Back button -->
     <div class="back-wrap">
-      <button class="back-btn" type="button" onclick="history.back()" aria-label="Retour">← Back</button>
+      <button class="back-btn" type="button" onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='cat.html'; }" aria-label="Retour">← Back</button>
     </div>
 
     <section class="rows" aria-label="CTF challenges">
@@ -139,7 +139,7 @@
           <p class="aside">
             Old email carries a uuencoded DOS .COM. Decode, inspect the binary (or run in an emulator) and XOR with 0x2A to print the hidden message.
           </p>
-          <a class="read-link" href="/writeups/buckeye2025_1985.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/buckeye2025_1985.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -162,7 +162,7 @@
           <p class="aside">
             The document hides clues in plain sight: an acrostic points you to the ZIP internals, then the flag sits inside word/theme/theme1.xml. Unzip and read the XML.
           </p>
-          <a class="read-link" href="/writeups/buckeye2025_The_Professor_s_Files.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/buckeye2025_The_Professor_s_Files.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -184,7 +184,7 @@
           <p class="aside">
             The PDF is a decoy: the real payload is embedded in a compressed stream. Extract the streams, brute-force zlib offsets, then recover a hidden PNG and read the flag.
           </p>
-          <a class="read-link" href="/writeups/glacier2025_find_me.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/glacier2025_find_me.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -206,7 +206,7 @@
           <p class="aside">
             Rebuild bitmap tiles from the RDP cache to recover the attacker IP, isolate the real PCAP traffic, then decrypt the exfiltrated OpenSSL payload with the recovered key material.
           </p>
-          <a class="read-link" href="/writeups/visual_leak_writeup.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/visual_leak_writeup.md">READ THE WRITE-UP →</a>
         </div>
       </div>
 
@@ -227,7 +227,7 @@
           <p class="aside">
             Correlate PowerShell operational logging with Defender events, recover the exact timestamps and provider data, then satisfy the remote validator.
           </p>
-          <a class="read-link" href="/writeups/forensics_events_never_lie.md">READ THE WRITE-UP →</a>
+          <a class="read-link" href="../writeups/forensics_events_never_lie.md">READ THE WRITE-UP →</a>
         </div>
       </div>
     </section>

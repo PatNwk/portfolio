@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N3akz CODE - Write-ups & CTF Challenges</title>
+    <title>N3akz CODE - Write-ups &amp; CTF Challenges</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-grid"></div> <!-- Element de grille de fond -->
@@ -13,7 +13,7 @@
         <button
             class="back-btn"
             type="button"
-            onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='/page/portfolio.html'; }"
+            onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='./portfolio.html'; }"
             aria-label="Retour"
         >
             ← Back
@@ -22,21 +22,21 @@
     
     <header class="navbar">
         <nav class="nav-left">
-            <a href="#" class="nav-item menu">MENU</a>
+            <a href="cat.html" class="nav-item menu">MENU</a>
         </nav>
         <div class="logo">N3akz CODE</div> 
         <nav class="nav-right">
-            <a href="#" class="nav-item say-hello">JOIN OUR TEAM</a>
+            <a href="contact.html" class="nav-item say-hello">CONTACT</a>
             <div class="tag-group-right">
-                <span class="tag tag-right-1">FLAG FORMAT: [TEAMNAME-CTF]</span>
-                <span class="tag tag-right-2">CATEGORY: PWNING / REVERSE</span>
+                <span class="tag tag-right-1">FLAG FORMAT: N3AKZ{...}</span>
+                <span class="tag tag-right-2">CATEGORY: WRITE-UPS / CHALLENGES</span>
             </div>
         </nav>
         <div class="header-line"></div> <!-- Ligne décorative horizontale -->
     </header>
 
     <main class="hero-section">
-        <span class="tag tag-top-left">#WRITEUP | #CVE-2025</span>
+        <span class="tag tag-top-left">#WRITEUPS | #CTF</span>
 
         <!-- Marqueurs de coin -->
         <div class="corner-marker top-left-corner">[</div>
@@ -50,10 +50,10 @@
         <h1 class="headline">
             <span class="line-1 outlined">HUNT THE</span>
             
-            <div class="line-2-3">
+            <span class="line-2-3">
                 <span class="line-2 outlined">FLAG</span>
                 <span class="line-3 filled">CRACK THE</span>
-            </div>
+            </span>
             
             <span class="line-4 outlined">NOISE</span>
         </h1>
@@ -69,7 +69,7 @@
                     CONTEXT-RICH CHALLENGE SOLUTIONS
                 </p>
                 <div class="small-meta-data">
-                    <span class="meta-item">IP: 192.168.1.1</span>
+                    <span class="meta-item">LAB: PUBLIC WRITE-UPS</span>
                     <span class="meta-item status-ok">STATUS: OK</span>
                 </div>
             </div>
@@ -89,7 +89,7 @@
     --line-thickness: 1px;
 }
 
-/* ----------------- Reset & Base Styles ----------------- */
+/* ----------------- Reset &amp; Base Styles ----------------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -232,7 +232,7 @@ a {
 
 .nav-item { margin: 0; opacity: 0.8; } 
 
-/* Tags Top-Left & Decorative Hashes */
+/* Tags Top-Left &amp; Decorative Hashes */
 .tag-top-left, .hash-corner {
     display: none; 
 }
@@ -250,7 +250,7 @@ a {
 
 /* Titre Principal (Mobile) */
 .headline {
-    font-size: clamp(60px, 15vw, 85px); 
+    font-size: 4.8rem; 
     line-height: 0.95; 
     font-weight: 700;
     margin-top: 15vh; 
@@ -358,7 +358,8 @@ a {
         display: block;
         position: absolute;
         height: var(--line-thickness);
-        width: 100%;
+        left: 0;
+        right: 0;
         background-color: var(--color-primary);
         opacity: 0.3;
     }
@@ -424,7 +425,7 @@ a {
         margin-top: 0; 
     }
     
-    /* Tags Top-Left & Decorative Hashes */
+    /* Tags Top-Left &amp; Decorative Hashes */
     .tag-top-left, .hash-corner {
         display: block; 
         position: absolute;
@@ -459,7 +460,7 @@ a {
 
     /* Titre Principal (Desktop Layout) */
     .headline {
-        font-size: clamp(80px, 12vw, 160px); 
+        font-size: 7.2rem; 
         line-height: 0.85; 
         margin-top: 150px; 
         margin-bottom: auto;

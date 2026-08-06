@@ -1,67 +1,73 @@
 footer {
-    background-color: #f9f9f9;
-    padding: 40px;
-    text-align: center;
     width: 100%;
     margin-top: auto;
+    padding: 54px 6%;
+    color: #f5f7f4;
+    background: #101010;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    text-align: center;
 }
 
 .footer-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: column; 
+    justify-content: center;
+    gap: 20px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.signature {
+    color: rgba(245, 247, 244, 0.84);
 }
 
 .signature svg {
-    width: 70%;
+    width: min(260px, 70%);
     height: auto;
     transform-origin: center;
     animation: draw-signature 3s ease-in-out forwards;
+}
+
+.signature path {
+    stroke: currentColor;
 }
 
 .social-media-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+    gap: 14px;
+    margin-top: 0;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
 .social-icon img {
-    transition: transform 0.3s ease;
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+    transition: transform 180ms ease;
+}
+
+.social-icon:hover {
+    border-color: rgba(224, 47, 47, 0.7);
+    background: rgba(224, 47, 47, 0.16);
+    transform: translateY(-2px);
 }
 
 .social-icon:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
-
-@media screen and (max-width: 768px) {
-    footer {
-        padding: 20px;
-    }
-    .footer-content {
-        flex-direction: column; 
-    }
-}
-
-
-@media screen and (max-width: 480px) {
-    footer {
-        padding: 10px;
-    }
-    .social-media-links {
-        flex-direction: column; 
-    }
-}
-
-
-.signature svg {
-    width: 70%;
-    height: auto;
-    transform-origin: center;
-    animation: draw-signature 3s ease-in-out forwards;
-}
-
 
 @keyframes draw-signature {
     0% {
@@ -69,5 +75,30 @@ footer {
     }
     100% {
         stroke-dasharray: 200, 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 38px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 30px 16px;
+    }
+
+    .social-media-links {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .signature svg,
+    .social-icon,
+    .social-icon img {
+        animation: none;
+        transition: none;
     }
 }

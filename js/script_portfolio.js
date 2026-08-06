@@ -1,30 +1,45 @@
-const projectContainers = document.querySelectorAll('.project-container');
-        const projectImages = document.querySelectorAll('.move-on-scroll');
+(() => {
+    const projectContainers = document.querySelectorAll(".project-container");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        function revealProjectsOnScroll() {
-            const scrollY = window.scrollY;
+    if (!projectContainers.length) {
+        return;
+    }
 
-            projectContainers.forEach(project => {
-                const rect = project.getBoundingClientRect();
-                const projectTop = rect.top;
-                const projectBottom = rect.bottom;
-                const delay = parseInt(project.getAttribute('data-delay'));
+    function revealProject(project) {
+        const delay = prefersReducedMotion
+            ? 0
+            : Number.parseInt(project.getAttribute("data-delay"), 10) || 0;
 
-                if (projectTop < window.innerHeight && projectBottom > 0) {
-                    setTimeout(() => {
-                        project.classList.add('visible');
-                    }, delay);
+        window.setTimeout(() => {
+            project.classList.add("visible");
+        }, delay);
+    }
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    revealProject(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
+        }, { threshold: 0.14 });
 
-            projectImages.forEach(img => {
-                const rect = img.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    img.style.transform = 'translateY(0)';
-                } else {
-                    img.style.transform = 'translateY(50px)';
-                }
-            });
-        }
+        projectContainers.forEach(project => observer.observe(project));
+        return;
+    }
 
-        window.addEventListener('scroll', revealProjectsOnScroll);
+    function revealProjectsOnScroll() {
+        projectContainers.forEach(project => {
+            const rect = project.getBoundingClientRect();
+
+            if (rect.top < window.innerHeight && rect.bottom > 0 && !project.classList.contains("visible")) {
+                revealProject(project);
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealProjectsOnScroll, { passive: true });
+    revealProjectsOnScroll();
+})();
