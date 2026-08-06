@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
     const textElement = document.querySelector(".Langue h2");
     let languageIndex = 0;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (textElement) {
+    if (textElement && !reducedMotion) {
         function changeText() {
             textElement.style.opacity = "0";
 
@@ -46,27 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTime();
     setInterval(updateTime, 60000);
 
-    const menuIcon = document.querySelector(".menu-icon");
-    const nav = document.getElementById("main-nav");
-
-    if (menuIcon && nav) {
-        menuIcon.addEventListener("click", () => {
-            nav.classList.toggle("open");
-            menuIcon.classList.toggle("open");
-        });
-
-        nav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => {
-                nav.classList.remove("open");
-                menuIcon.classList.remove("open");
-            });
-        });
-
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > 768) {
-                nav.classList.remove("open");
-                menuIcon.classList.remove("open");
-            }
-        });
-    }
 });

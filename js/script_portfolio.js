@@ -7,9 +7,8 @@
     }
 
     function revealProject(project) {
-        const delay = prefersReducedMotion
-            ? 0
-            : Number.parseInt(project.getAttribute("data-delay"), 10) || 0;
+        const requestedDelay = Number.parseInt(project.getAttribute("data-delay"), 10) || 0;
+        const delay = prefersReducedMotion ? 0 : Math.min(requestedDelay, 220);
 
         window.setTimeout(() => {
             project.classList.add("visible");

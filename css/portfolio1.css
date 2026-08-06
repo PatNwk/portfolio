@@ -1,15 +1,15 @@
 :root {
-    --bg: #f4f6f2;
-    --paper: #fbfbf8;
-    --ink: #101010;
-    --muted: #5f6864;
+    --bg: #eeece5;
+    --paper: #f7f5ef;
+    --ink: #111311;
+    --muted: #626963;
     --line: rgba(16, 16, 16, 0.14);
     --line-strong: rgba(16, 16, 16, 0.28);
-    --accent: #d92d32;
-    --teal: #0e6f68;
+    --accent: #f04f42;
+    --teal: #087257;
     --font-display: "Bebas Neue", Arial, sans-serif;
-    --font-body: Arial, sans-serif;
-    --font-mono: "SFMono-Regular", "Roboto Mono", "Courier New", monospace;
+    --font-body: "Manrope", Arial, sans-serif;
+    --font-mono: "DM Mono", "Courier New", monospace;
 }
 
 * {
@@ -24,6 +24,7 @@ body {
     color: var(--ink);
     background: var(--bg);
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
 }
 
 body::before {
@@ -50,9 +51,10 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 1240px;
+    width: min(1240px, calc(100% - 96px));
+    max-width: none;
     margin: 0 auto;
-    padding: 72px 6% 42px;
+    padding: 96px 0 64px;
 }
 
 .container h2 {
@@ -131,7 +133,7 @@ img {
     max-width: 570px;
     color: #303735;
     font-size: 1.06rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.8;
 }
 
@@ -182,16 +184,21 @@ img {
     counter-increment: project;
     position: relative;
     display: grid;
-    grid-template-columns: 88px minmax(340px, 0.92fr) minmax(0, 1fr);
+    grid-template-columns: 74px minmax(340px, 0.92fr) minmax(0, 1fr);
     gap: 32px;
     align-items: center;
-    width: min(1180px, calc(100% - 48px));
+    width: min(1240px, calc(100% - 96px));
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 34px 18px;
     border-top: 1px solid var(--line-strong);
+    background: transparent;
     opacity: 0;
     transform: translateY(36px);
-    transition: opacity 560ms ease, transform 560ms ease;
+    transition: opacity 560ms ease, transform 560ms ease, background-color 220ms ease;
+}
+
+.full-width-container:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .full-width-container:last-of-type {
@@ -219,7 +226,7 @@ img {
     height: auto;
     border: 0;
     object-fit: contain;
-    background: transparent;
+    background: #dedbd2;
     filter: grayscale(100%) contrast(1.05);
     transition: filter 180ms ease, transform 180ms ease;
 }
@@ -238,7 +245,7 @@ img {
     margin-bottom: 10px;
     color: var(--ink);
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 3.25rem;
     font-weight: 400;
     line-height: 0.95;
     letter-spacing: 0;
@@ -267,7 +274,7 @@ img {
 .text-content p {
     color: #303735;
     font-size: 1.02rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.75;
 }
 
