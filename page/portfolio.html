@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/portfolio1.css">
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/glass.css">
     <script src="../js/script_portfolio.js" defer></script>
     <script src="../js/index.js" defer></script>
 
@@ -17,6 +18,7 @@
 </head>
 
 <body id="top" class="portfolio-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
         <a class="brand" href="../index.html" aria-label="Patrick Nowak — Home">
             <span class="brand-mark">PN</span>
@@ -40,22 +42,22 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
     <div class="container">
         <h2>Project Archive</h2>
-        <div class="title">
+        <h1 class="title">
             <span class="career">PROJECT</span>
             <span class="journey">LEDGER</span>
-        </div>
+        </h1>
         <div class="grid-container">
             <div>
-                <p class="description">A selection of school, personal and security projects kept as an archive: what
-                    was built, what was configured, what was tested and where the source or notes live.</p>
+                <p class="description">A selection of school, personal and security projects, completed by a separate
+                    record of academic forensic casework and its supporting reports.</p>
             </div>
             <div>
                 <p class="description">The through-line is practical engineering: <span class="highlight">networks,
-                        Linux, application code, detection logic and CTF reasoning</span>. Each entry is here because it
-                    leaves something concrete to inspect.</p>
+                        Linux, application code, detection logic and incident investigation</span>. Course scenarios and
+                    competition write-ups are intentionally kept separate.</p>
             </div>
         </div>
         <div class="portfolio-stats" aria-label="Portfolio project highlights">
@@ -68,10 +70,11 @@
                 <span>write-ups</span>
             </article>
             <article>
-                <strong>6</strong>
-                <span>security fields</span>
+                <strong>5</strong>
+                <span>forensic reports</span>
             </article>
         </div>
+        <a class="archive-stage-link" href="../stage-b2/index.html">Field experience · VIApass internship <span aria-hidden="true">↗</span></a>
     </div>
     <div class="full-width-container project-container" data-delay="200">
         <img src="../images/cisco.jpg" alt="Cisco network configuration project" class="project-image move-on-scroll" loading="lazy">
@@ -247,6 +250,129 @@
             </p>
         </div>
     </div>
+
+    <section class="forensic-coursework" id="academic-forensics" aria-labelledby="forensic-coursework-title">
+        <div class="forensic-coursework-heading">
+            <div>
+                <p class="forensic-kicker">Academic casework / Digital forensics</p>
+                <h2 id="forensic-coursework-title">Forensic scenarios,<br><em>handled as evidence.</em></h2>
+            </div>
+            <div class="forensic-coursework-intro">
+                <p>These reports document classroom investigation scenarios, not CTF challenges. Each one follows a
+                    traceable process: acquire, preserve, analyse, correlate and report.</p>
+                <span>5 reports · PDF archive · B3 Cyber</span>
+            </div>
+        </div>
+
+        <div class="forensic-report-grid">
+            <a class="forensic-report-card forensic-report-card-featured"
+                href="../fofo/Rapport_Forensique_Final.pdf" target="_blank" rel="noopener noreferrer">
+                <figure class="forensic-report-cover">
+                    <img src="../images/forensics-case-investigation.png"
+                        alt="Cover of the multi-device forensic investigation report" loading="lazy">
+                    <figcaption>PDF · 16 pages</figcaption>
+                </figure>
+                <div class="forensic-report-copy">
+                    <p class="forensic-report-index">Case report / 01</p>
+                    <h3>Multi-device investigation and evidence correlation</h3>
+                    <p>A complete scenario combining three workstations and mobile extractions to rebuild a timeline,
+                        connect encrypted artefacts and assess every conclusion by confidence level.</p>
+                    <ul aria-label="Tools and methods">
+                        <li>Autopsy</li>
+                        <li>UFADE / UFED</li>
+                        <li>OpenStego</li>
+                    </ul>
+                    <span class="forensic-report-link">Open the report <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+
+            <a class="forensic-report-card" href="../fofo/Rapport_Forensic_TP_I.I_Nowak.pdf" target="_blank"
+                rel="noopener noreferrer">
+                <figure class="forensic-report-cover">
+                    <img src="../images/forensics-acquisition.png"
+                        alt="Cover of the forensic memory and disk acquisition report" loading="lazy">
+                    <figcaption>PDF · 26 pages</figcaption>
+                </figure>
+                <div class="forensic-report-copy">
+                    <p class="forensic-report-index">Lab report / 02</p>
+                    <h3>Memory and disk acquisition</h3>
+                    <p>Acquiring RAM and storage images in a Kali Linux and QEMU lab while documenting integrity,
+                        reproducibility and chain-of-custody principles.</p>
+                    <ul aria-label="Tools and methods">
+                        <li>dd</li>
+                        <li>SHA-256</li>
+                        <li>QEMU</li>
+                    </ul>
+                    <span class="forensic-report-link">Open the report <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+
+            <a class="forensic-report-card"
+                href="../fofo/Rapport_Forensic_PART_I.II_Nowak%20(1).pdf" target="_blank"
+                rel="noopener noreferrer">
+                <figure class="forensic-report-cover">
+                    <img src="../images/forensics-linux-lsass.png"
+                        alt="Cover of the Linux, web, PGP and LSASS forensic report" loading="lazy">
+                    <figcaption>PDF · 18 pages</figcaption>
+                </figure>
+                <div class="forensic-report-copy">
+                    <p class="forensic-report-index">Lab report / 03</p>
+                    <h3>Linux, web, PGP and LSASS investigation</h3>
+                    <p>Collecting exposed evidence, checking metadata and hashes, analysing protected archives and a
+                        Windows LSASS dump, then validating the findings in the lab.</p>
+                    <ul aria-label="Tools and methods">
+                        <li>ExifTool</li>
+                        <li>GPG</li>
+                        <li>pypykatz</li>
+                    </ul>
+                    <span class="forensic-report-link">Open the report <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+
+            <a class="forensic-report-card"
+                href="../fofo/Rapport_Forensic_PART_II.I_Nowak%20(1).pdf" target="_blank"
+                rel="noopener noreferrer">
+                <figure class="forensic-report-cover">
+                    <img src="../images/forensics-windows-memory.png"
+                        alt="Cover of the Windows memory investigation report" loading="lazy">
+                    <figcaption>PDF · 24 pages</figcaption>
+                </figure>
+                <div class="forensic-report-copy">
+                    <p class="forensic-report-index">Lab report / 04</p>
+                    <h3>Windows memory analysis</h3>
+                    <p>Examining three VMEM acquisitions to recover system context, registry artefacts, user hashes,
+                        console traces and evidence of encryption activity.</p>
+                    <ul aria-label="Tools and methods">
+                        <li>Volatility 3</li>
+                        <li>Impacket</li>
+                        <li>Hashcat</li>
+                    </ul>
+                    <span class="forensic-report-link">Open the report <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+
+            <a class="forensic-report-card" href="../fofo/Rapport_Forensic_TP_II.II_Nowak_Carv.pdf"
+                target="_blank" rel="noopener noreferrer">
+                <figure class="forensic-report-cover">
+                    <img src="../images/forensics-data-carving.png"
+                        alt="Cover of the manual data carving and Autopsy validation report" loading="lazy">
+                    <figcaption>PDF · 9 pages</figcaption>
+                </figure>
+                <div class="forensic-report-copy">
+                    <p class="forensic-report-index">Lab report / 05</p>
+                    <h3>Manual data carving and recovery</h3>
+                    <p>Recovering a deleted JPEG from a FAT32 image by locating its byte signatures, extracting it with
+                        dd and verifying the result independently in Autopsy.</p>
+                    <ul aria-label="Tools and methods">
+                        <li>Data carving</li>
+                        <li>Autopsy</li>
+                        <li>FAT32</li>
+                    </ul>
+                    <span class="forensic-report-link">Open the report <span aria-hidden="true">↗</span></span>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <div class="full-width-container project-container" data-delay="1800">
         <div class="background-effect"></div>

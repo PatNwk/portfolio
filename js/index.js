@@ -4,6 +4,14 @@
     const nav = document.getElementById("main-nav");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    if (!reducedMotion && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("js-motion");
+    }
+
+    document.querySelectorAll(".site-header a.active").forEach(link => {
+        link.setAttribute("aria-current", "page");
+    });
+
     function closeMenu() {
         if (!menuButton || !nav) return;
         nav.classList.remove("open");
@@ -28,7 +36,10 @@
             if (window.innerWidth > 900) closeMenu();
         });
         document.addEventListener("keydown", event => {
-            if (event.key === "Escape") closeMenu();
+            if (event.key === "Escape" && nav.classList.contains("open")) {
+                closeMenu();
+                menuButton.focus();
+            }
         });
     }
 

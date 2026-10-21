@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N3akz CODE - Categories</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/cat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="../css/glass-challenges.css">
 </head>
-<body>
-    <div class="menu-overlay">
+<body class="category-page">
+    <main class="menu-overlay">
         <header class="navbar-overlay">
-            <button
-                class="nav-item close-btn"
-                type="button"
-                onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='./ctf.html'; }"
-                aria-label="Retour"
-            >
-                [ BACK ]
-            </button>
+            <a class="nav-item close-btn" href="./ctf.html" aria-label="Back">[ BACK ]</a>
             <div class="logo-overlay">N3akz CODE</div> 
             <a href="./ctf.html" class="nav-item say-hello">[ LANDING ]</a>
         </header>
 
-        <nav class="categories-list">
+        <div class="archive-heading">
+            <div>
+                <p class="archive-kicker">The security notebook</p>
+                <h1>Explore the<br><span>CTF archive.</span></h1>
+                <p class="archive-description">Challenges, investigations, and the thinking behind each solution. Pick a discipline and explore the write-ups.</p>
+            </div>
+            <p class="archive-total"><strong>13</strong>Categories</p>
+        </div>
+        <nav class="categories-list" aria-label="CTF categories">
             <a href="./ctf.html" class="category-item">HOME</a>
             <a href="./crypto.html" class="category-item">CRYPTOGRAPHY</a>
             <a href="./web.html" class="category-item">WEB HACKING</a>
@@ -39,7 +42,12 @@
             <a href="./network.html" class="category-item">NETWORK</a>
             <a href="./coming-soon.html" class="category-item">PROGRAMMING</a>
         </nav>
-    </div>
+    <footer class="archive-footer">
+      <span>N3akz CODE / CTF archive</span>
+      <a href="./cat.html">Explore all categories ↗</a>
+      <a href="../index.html">Back to portfolio ↗</a>
+    </footer>
+    </main>
 
 </body>
 </html>

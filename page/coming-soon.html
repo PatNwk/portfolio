@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N3akz CODE - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/cat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/glass-challenges.css">
 </head>
-<body>
+<body class="category-page">
     <div class="menu-overlay">
         <header class="navbar-overlay">
-            <button
-                class="nav-item close-btn"
-                type="button"
-                onclick="if (window.history.length > 1) { history.back(); } else { window.location.href='./cat.html'; }"
-                aria-label="Back"
-            >
-                [ BACK ]
-            </button>
+            <a class="nav-item close-btn" href="./cat.html" aria-label="Back">[ BACK ]</a>
             <div class="logo-overlay">N3akz CODE</div>
             <a href="./cat.html" class="nav-item say-hello">[ CATEGORIES ]</a>
         </header>
 
+        <div class="archive-heading">
+            <div>
+                <p class="archive-kicker">CTF archive / In progress</p>
+                <h1>The next <span>challenge.</span></h1>
+            </div>
+        </div>
         <main class="categories-list">
             <p class="category-item" aria-label="Coming soon">COMING SOON</p>
         </main>
+    <footer class="archive-footer">
+      <span>N3akz CODE / CTF archive</span>
+      <a href="./cat.html">Explore all categories ↗</a>
+      <a href="../index.html">Back to portfolio ↗</a>
+    </footer>
     </div>
 </body>
 </html>
